@@ -30,6 +30,7 @@
 
     <!-- HEADER -->
     <?php
+        $page = 'home';
         include 'layouts/header.php';
     ?>
     <!-- END HEADER -->

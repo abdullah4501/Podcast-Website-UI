@@ -30,6 +30,7 @@
 
     <!-- HEADER -->
     <?php
+    $page = 'podcast';
     include 'layouts/header.php';
     ?>
     <!-- END HEADER -->
