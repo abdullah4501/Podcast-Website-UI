@@ -3,4 +3,7 @@ RewriteCond %{REQUEST_FILENAME} !-f
 RewriteRule ^about-us?$ about-us.php [L]
 RewriteRule ^podcast?$ podcast.php [L]
 RewriteRule ^contact?$ contact.php [L]
+RewriteRule ^team?$ team.php [L]
+RewriteRule ^gallery?$ gallery.php [L]
+RewriteRule ^blogs?$ blogs.php [L]
 RewriteRule ^home?$ index.php [QSA,L]
