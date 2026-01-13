@@ -43,7 +43,9 @@
     --secondary-dark: #1c2326;
     --secondary-color: #21282b;
     --gray-color: #c2c2c2;
-    --accent-color: #e12929;
+    --accent-color: #FF3131;
+    --logo-blue: #0C7FFE;
+    --logo-green: #16A637;
     --font-1: 'Montserrat', sans-serif;
     ;
     --font-2: 'Source Sans 3', sans-serif;
@@ -326,6 +328,18 @@ a {
     color: var(--accent-color);
 }
 
+.logo-blue {
+  color:  #0C7FFE ;
+}
+.host-badge {
+    background: var(--logo-blue);
+    padding: 0 12px;
+    font-weight: 500;
+    border-radius: 6px;
+}
+.logo-green {
+  color:  #16A637 ;
+}
 
 .border-accent-color {
     border-color: var(--accent-color) !important;
@@ -515,12 +529,12 @@ a {
     display: flex;
     justify-content: center;
     align-items: center;
-    background-color: var(--accent-color);
+    background-color: var(--logo-blue);
     color: white;
 }
 
 .social-item:hover {
-    color: var(--accent-color) !important;
+    color: var(--logo-blue) !important;
     background-color: white;
 }
 
@@ -794,7 +808,7 @@ a {
 }
 
 .card .link:hover {
-    color: var(--accent-color);
+    color: var(--logo-green);
 }
 
 .link.accent-color {

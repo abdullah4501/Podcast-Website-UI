@@ -6,12 +6,10 @@
                     <div class="row row-cols-1 row-cols-lg-2 w-100">
                         <div class="col col-lg-4 mb-3">
                             <div class="d-flex flex-column gap-3">
-                                <img src="image/logo.png" alt="logo" class="img-fluid w-75">
+                                <img src="image/nashcast_logo4.png" alt="logo" class="img-fluid w-50">
                                 <p>
-                                    Praesent ornare volutpat sollicitudin. Nulla vel semper augue, aliquet posuere odio.
-                                    Morbi laoreet scelerisque risus vel tempor. Duis sagittis id elit et molestie. Etiam
-                                    consectetur ipsum purus, a ornare mi finibus quis. egestas a nulla. Fusce tincidunt
-                                    blandit ex, vel placerat odio placerat at.
+                                    The NashCast is a YouTube podcast hosted by Adeel Shaikh and dedicated to powerful conversations that shape how people think, lead, and succeed.
+                                    Each episode delivers real-world insight, strategic thinking, and practical tools from entrepreneurs, operators, and changemakers across business, finance, technology, leadership, and personal growth.
                                 </p>
                                 <div class="social-container mb-lg-0 mb-3">
                                     <a href="https://www.youtube.com" class="social-item">

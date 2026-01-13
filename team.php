@@ -14,7 +14,7 @@
             <div class="image-overlay"></div>
             <div class="r-container  position-relative" style="z-index: 2;">
                 <div class="d-flex flex-column">
-                    <h2 class="font-1 fw-bold">Meet The <span class="accent-color">Team</span></h2>
+                    <h2 class="font-1 fw-bold">Meet The <span class="accent-color">NashCast</span> Team</h2>
                     <nav aria-label="breadcrumb">
                         <ol class="breadcrumb font-2">
                             <li class="breadcrumb-item"><a href="index.html">Home</a></li>
@@ -34,20 +34,16 @@
                     <div class="col mb-3">
                         <div class="d-flex flex-column h-100 justify-content-center gap-3">
                             <span class="fs-5">Introduce</span>
-                            <h3 class="font-1 fw-bold lh-1">Always Make Something <span class="accent-color">Cool and
-                                    Different </span></h3>
+                            <h3 class="font-1 fw-bold lh-1">Hosted by <span class="accent-color">Adeel Shaikh</span></h3>
                             <p class="text-gray fs-5 fst-italic">
-                                “Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus facilisis, neque id
-                                dapibus commodo, est libero ultricies felis, venenatis pulvinar eros magna dapibus
-                                turpis. Curabitur vel congue quam. Donec eleifend dui nec dui malesuada, id consectetur
-                                arcu aliquet.”
+                                “The NashCast was created to give ambitious people access to the conversations that usually happen behind closed doors, how real operators think about risk, strategy, careers, leadership, and building a life of meaningful impact.”
                             </p>
                             <div>
                                 <img src="image/signature.png" alt="signature" class="img-fluid" width="250">
                             </div>
                             <div>
-                                <h5 class="font-1 fw-bold m-0">Pepper Potts</h5>
-                                <span class="accent-color">Founder | Expert Host</span>
+                                <h5 class="font-1 fw-bold m-0">Adeel Shaikh</h5>
+                                <span class="accent-color">Host &amp; Creator of The NashCast</span>
                             </div>
                             <div class="social-container gap-4">
                                 <a href="https://www.facebook.com" class="social-item">
@@ -71,11 +67,8 @@
             <div class="r-container">
                 <div class="d-flex flex-column gap-3 text-center">
                     <span class="fs-5">Our Team</span>
-                    <h3 class="font-1 fw-bold">Meet Our <span class="accent-color">Host</span></h3>
-                    <p class="mx-auto text-gray" style="max-width: 768px;">Lorem ipsum dolor sit amet, consectetur
-                        adipiscing
-                        elit. Morbi pharetra magna a lacus dignissim, sed scelerisque elit rutrum. Nam a pulvinar
-                        sapien, a placerat arcu. Nam condimentum orci et semper rutrum.</p>
+                    <h3 class="font-1 fw-bold">The People Behind <span class="accent-color">The NashCast</span></h3>
+                    <p class="mx-auto text-gray" style="max-width: 768px;">The NashCast is powered by a small, focused team working across research, production, and distribution to bring you conversations that are clear, thoughtful, and actionable.</p>
                     <div class="row row-cols-1 row-cols-lg-3">
                         <div class="col mb-3">
                             <div class="d-flex flex-column bg-secondary-color p-4 rounded-3">
@@ -209,11 +202,9 @@
                     <div class="image-overlay-2"></div>
                     <div class="row row-cols-1 row-cols-lg-2 position-relative" style="z-index: 2;">
                         <div class="col  mb-3">
-                            <h3 class="font-1 fw-bold lh-1"><span class="accent-color">Subscribe</span> For The Latest
-                                Episodes</h3>
+                            <h3 class="font-1 fw-bold lh-1"><span class="accent-color">Subscribe</span> To The NashCast</h3>
                             <p class="text-gray">
-                                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut elit tellus, luctus nec
-                                ullamcorper mattis, pulvinar dapibus leo.
+                                Join the community of leaders, founders, and learners who use The NashCast as a regular source of insight and direction.
                             </p>
                         </div>
                         <div class="col  mb-3">
@@ -251,10 +242,7 @@
                 <div class="d-flex flex-column text-center gap-3">
                     <span class="fs-5">Our Partners</span>
                     <h3 class="font-1 fw-bold lh-1">In <span class="accent-color">Collaboration</span> With</h3>
-                    <p class="mx-auto text-gray" style="max-width: 768px;">Lorem ipsum dolor sit amet, consectetur
-                        adipiscing
-                        elit. Morbi pharetra magna a lacus dignissim, sed scelerisque elit rutrum. Nam a pulvinar
-                        sapien, a placerat arcu. Nam condimentum orci et semper rutrum.
+                    <p class="mx-auto text-gray" style="max-width: 768px;">We collaborate with ecosystems, communities, and brands that care about thoughtful leadership, long-term value creation, and real-world learning.
                     </p>
                     <div class="row row-cols-1 row-cols-lg-6 justify-content-center align-items-center">
                         <div class="col mb-3">

@@ -12,7 +12,7 @@ include 'layouts/header.php';
         <div class="image-overlay"></div>
         <div class="r-container  position-relative" style="z-index: 2;">
             <div class="d-flex flex-column">
-                <h2 class="font-1 fw-bold">Our <span class="accent-color">Blog</span></h2>
+                <h2 class="font-1 fw-bold">The <span class="accent-color">NashCast</span> Blog</h2>
                 <nav aria-label="breadcrumb">
                     <ol class="breadcrumb font-2">
                         <li class="breadcrumb-item"><a href="index.html">Home</a></li>
@@ -26,13 +26,10 @@ include 'layouts/header.php';
     <section class="section">
         <div class="r-container">
             <div class="d-flex flex-column text-center gap-3">
-                <span class="fs-5">Our Blog</span>
-                <h3 class="font-1 fw-bold"><span class="accent-color">Latest</span> News For You</h3>
+                <span class="fs-5">The NashCast Blog</span>
+                <h3 class="font-1 fw-bold">Ideas, Insights, and Frameworks From The NashCast</h3>
                 <p class="mx-auto text-gray" style="max-width: 768px;">
-                    Lorem ipsum dolor sit amet, consectetur
-                    adipiscing
-                    elit. Morbi pharetra magna a lacus dignissim, sed scelerisque elit rutrum. Nam a pulvinar
-                    sapien, a placerat arcu. Nam condimentum orci et semper rutrum.
+                    Go beyond the audio. Here we break down episodes into key takeaways, mental models, and playbooks across business, finance, technology, leadership, and personal growth so you can revisit and implement what you learn.
                 </p>
                 <div class="row row-cols-1 row-cols-lg-3 text-start">
                     <div class="col mb-3">
@@ -116,11 +113,8 @@ include 'layouts/header.php';
     <section class="section">
         <div class="r-container">
             <div class="d-flex flex-column gap-3 text-center">
-                <h3 class="font-1 fw-bold">Most <span class="accent-color">Favorite</span> Podcast</h3>
-                <p class="mx-auto text-gray" style="max-width: 768px;">Lorem ipsum dolor sit amet, consectetur
-                    adipiscing
-                    elit. Morbi pharetra magna a lacus dignissim, sed scelerisque elit rutrum. Nam a pulvinar
-                    sapien, a placerat arcu. Nam condimentum orci et semper rutrum.</p>
+                <h3 class="font-1 fw-bold">Featured <span class="accent-color">NashCast</span> Episodes</h3>
+                <p class="mx-auto text-gray" style="max-width: 768px;">A selection of NashCast conversations listeners return to again and again, covering inflection points in careers, companies, and personal growth.</p>
                 <div class="row row-cols-1 row-cols-lg-3 w-100 text-start">
                     <div class="col  mb-3">
                         <div class="d-flex flex-column gap-3 h-100">
@@ -236,11 +230,9 @@ include 'layouts/header.php';
                 <div class="image-overlay-2"></div>
                 <div class="row row-cols-1 row-cols-lg-2 position-relative" style="z-index: 2;">
                     <div class="col  mb-3">
-                        <h3 class="font-1 fw-bold lh-1"><span class="accent-color">Subscribe</span> For The Latest
-                            Episodes</h3>
+                        <h3 class="font-1 fw-bold lh-1"><span class="accent-color">Subscribe</span> To The NashCast</h3>
                         <p class="text-gray">
-                            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut elit tellus, luctus nec
-                            ullamcorper mattis, pulvinar dapibus leo.
+                            Never miss a conversation. Subscribe on YouTube to get new episodes, highlights, and insights from our guests straight to your feed.
                         </p>
                     </div>
                     <div class="col  mb-3">

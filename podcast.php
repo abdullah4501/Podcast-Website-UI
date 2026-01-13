@@ -13,7 +13,7 @@
             <div class="image-overlay"></div>
             <div class="r-container  position-relative" style="z-index: 2;">
                 <div class="d-flex flex-column">
-                    <h2 class="font-1 fw-bold">Our <span class="accent-color">Podcasts</span></h2>
+                    <h2 class="font-1 fw-bold">The <span class="accent-color">NashCast</span> Episodes</h2>
                     <nav aria-label="breadcrumb">
                         <ol class="breadcrumb font-2">
                             <li class="breadcrumb-item"><a href="index.html">Home</a></li>
@@ -28,11 +28,8 @@
         <section class="section">
             <div class="r-container">
                 <div class="d-flex flex-column gap-3 text-center">
-                    <h3 class="font-1 fw-bold">Most <span class="accent-color">Favorite</span> Podcast</h3>
-                    <p class="mx-auto text-gray" style="max-width: 768px;">Lorem ipsum dolor sit amet, consectetur
-                        adipiscing
-                        elit. Morbi pharetra magna a lacus dignissim, sed scelerisque elit rutrum. Nam a pulvinar
-                        sapien, a placerat arcu. Nam condimentum orci et semper rutrum.</p>
+                    <h3 class="font-1 fw-bold">Start With These <span class="accent-color">NashCast</span> Episodes</h3>
+                    <p class="mx-auto text-gray" style="max-width: 768px;">A curated set of conversations that showcase what The NashCast is about, decision-making, leadership, execution, and personal growth in the real world.</p>
                     <div class="row row-cols-1 row-cols-lg-3 w-100 text-start">
                         <div class="col  mb-3">
                             <div class="d-flex flex-column gap-3 h-100">
@@ -146,8 +143,8 @@
             <div class="texture-overlay"></div>
             <div class="r-container position-relative" style="z-index: 2;">
                 <div class="d-flex flex-column text-center gap-3">
-                    <span class="fs-5">Our Podcast</span>
-                    <h3 class="font-1 fw-bold lh-1"><span class="accent-color">Recent</span> Episodes</h3>
+                    <span class="fs-5">The NashCast</span>
+                    <h3 class="font-1 fw-bold lh-1"><span class="accent-color">Recent</span> Conversations</h3>
                     <div class="row row-cols-1 row-cols-lg-3">
                         <div class="col mb-4">
                             <div class="d-flex flex-column gap-3 h-100">
@@ -385,11 +382,9 @@
                     <div class="image-overlay-2"></div>
                     <div class="row row-cols-1 row-cols-lg-2 position-relative" style="z-index: 2;">
                         <div class="col  mb-3">
-                            <h3 class="font-1 fw-bold lh-1"><span class="accent-color">Subscribe</span> For The Latest
-                                Episodes</h3>
+                            <h3 class="font-1 fw-bold lh-1"><span class="accent-color">Subscribe</span> To The NashCast</h3>
                             <p class="text-gray">
-                                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut elit tellus, luctus nec
-                                ullamcorper mattis, pulvinar dapibus leo.
+                                Subscribe on YouTube to stay close to the conversations shaping the future of business, technology, and leadership.
                             </p>
                         </div>
                         <div class="col  mb-3">
@@ -424,7 +419,7 @@
         <section class="section bg-secondary-color">
             <div class="r-container">
                 <div class="d-flex flex-column gap-3 text-center">
-                    <h5 class="font-1 fw-bold">Listen Our Podcast On</h5>
+                    <h5 class="font-1 fw-bold">Listen To The NashCast On</h5>
                     <div class="row row-cols-1 row-cols-lg-4">
                         <div class="col px-5 mb-3">
                             <img src="image/youtube.png" alt="youtube" class="img-fluid">

@@ -6,9 +6,9 @@
 
 
     <meta http-equiv="X-UA-Compatible" content="chrome=1">
-    <title>Goodsound - <?php echo ucwords($page); ?></title>
+    <title>The NashCast - <?php echo ucwords($page); ?></title>
     <meta name="description"
-        content="">
+        content="The NashCast is a YouTube podcast hosted by Adeel Shaikh, featuring powerful conversations with entrepreneurs, industry experts, and changemakers across business, finance, technology, leadership, and personal growth.">
     <meta name="robots" content="noindex, nofollow">
     <meta name="viewport" content="width=device-width, minimum-scale=1, maximum-scale=1">
     <meta name="turbo-visit-control" content="reload">
@@ -28,7 +28,7 @@
                 <div class="container-fluid">
                     <a class="navbar-brand" href="index.php">
                         <div class="logo-container">
-                            <img src="image/logo.png" alt="logo" class="img-fluid">
+                            <img src="image/nashcast_logo4.png" alt="logo" class="img-fluid w-50">
                         </div>
                     </a>
                     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
@@ -45,7 +45,10 @@
                             <li class="nav-item">
                                 <a class="nav-link <?= ($page == 'podcast') ? 'active' : ''; ?>" href="podcast">Podcasts</a>
                             </li>
-                            <li class="nav-item dropdown">
+                            <li class="nav-item">
+                                <a class="nav-link <?= ($page == 'team') ? 'active' : ''; ?>" href="team">Team</a>
+                            </li>
+                            <!-- <li class="nav-item dropdown">
                                 <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
                                     Pages
                                 </a>
@@ -56,8 +59,8 @@
                                     <li><a class="dropdown-item" href="#">FAQs</a></li>
                                     <li><a class="dropdown-item" href="#">404 Error</a></li>
                                 </ul>
-                            </li>
-                            <li class="nav-item dropdown">
+                            </li> -->
+                            <!-- <li class="nav-item dropdown">
                                 <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
                                     Blog
                                 </a>
@@ -65,7 +68,7 @@
                                     <li><a class="dropdown-item <?= ($page == 'blogs') ? 'active' : ''; ?>" href="blogs">Blogs</a></li>
                                     <li><a class="dropdown-item" href="#">Single Post</a></li>
                                 </ul>
-                            </li>
+                            </li> -->
                             <li class="nav-item">
                                 <a class="nav-link <?= ($page == 'contact') ? 'active' : ''; ?>" href="contact">Contact Us</a>
                             </li>

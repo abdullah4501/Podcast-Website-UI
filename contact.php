@@ -30,13 +30,11 @@
                 <div class="row row-cols-1 row-cols-lg-2">
                     <div class="col mb-3">
                         <div class="d-flex flex-column gap-3">
-                            <span class="fs-5">Contact Us</span>
-                            <h3 class="font-1 fw-bold lh-1">Send Your <span class="accent-color">Message</span>
+                            <span class="fs-5">Contact The NashCast</span>
+                            <h3 class="font-1 fw-bold lh-1">Send Your <span class="accent-color">Questions, Ideas, or Guest Suggestions</span>
                             </h3>
-                            <p class="text-gray">Lorem ipsum dolor sit amet,
-                                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus facilisis, neque id
-                                dapibus commodo, est libero ultricies felis, venenatis pulvinar eros magna dapibus
-                                turpis. Curabitur vel congue quam. consectetur adipiscing.
+                            <p class="text-gray">Whether you want to suggest a guest, explore a partnership, or share how an episode helped you, we’d love to hear from you.
+                                Reach out and our team will get back to you as soon as possible.
                             </p>
                             <div class="d-flex flex-column gap-3">
                                 <div class="d-flex flex-row gap-3 align-items-center">
@@ -151,11 +149,9 @@
                     <div class="image-overlay-2"></div>
                     <div class="row row-cols-1 row-cols-lg-2 position-relative" style="z-index: 2;">
                         <div class="col  mb-3">
-                            <h3 class="font-1 fw-bold lh-1"><span class="accent-color">Subscribe</span> For The Latest
-                                Episodes</h3>
+                            <h3 class="font-1 fw-bold lh-1"><span class="accent-color">Subscribe</span> To The NashCast</h3>
                             <p class="text-gray">
-                                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut elit tellus, luctus nec
-                                ullamcorper mattis, pulvinar dapibus leo.
+                                Stay close to the conversations shaping how we think about work, leadership, and growth. Subscribe on YouTube to get every new episode and highlight.
                             </p>
                         </div>
                         <div class="col  mb-3">

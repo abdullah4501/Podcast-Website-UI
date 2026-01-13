@@ -14,7 +14,7 @@
             <div class="image-overlay"></div>
             <div class="r-container  position-relative" style="z-index: 2;">
                 <div class="d-flex flex-column">
-                    <h2 class="font-1 fw-bold">About <span class="accent-color">Goodsound</span></h2>
+                    <h2 class="font-1 fw-bold">About <span class="accent-color">The NashCast</span></h2>
                     <nav aria-label="breadcrumb">
                         <ol class="breadcrumb font-2">
                             <li class="breadcrumb-item"><a href="index.html">Home</a></li>
@@ -31,17 +31,13 @@
                 <div class="row row-cols-1 row-cols-lg-2 w-100">
                     <div class="col mb-lg-0 mb-5">
                         <div class="d-flex flex-column gap-3 h-100 justify-content-center">
-                            <span class="fs-5">About Us</span>
-                            <h3 class="font-1 fw-bold lh-1">We Provide The <span class="accent-color">Latest</span>
-                                Podcast For You</h3>
+                            <span class="fs-5">About The NashCast</span>
+                            <h3 class="font-1 fw-bold lh-1">Inside <span class="accent-color">The NashCast</span> Podcast</h3>
                             <p class="text-gray">
-                                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus facilisis, neque id
-                                dapibus commodo, est libero ultricies felis, venenatis pulvinar eros magna dapibus
-                                turpis. Curabitur vel congue quam. Donec eleifend dui nec dui malesuada, id consectetur
-                                arcu aliquet.
+                                The NashCast is a YouTube podcast hosted by Adeel Shaikh, focused on powerful conversations that shape how people think, lead, and succeed.
+                                We sit down with entrepreneurs, operators, investors, and subject-matter experts across business, finance, technology, leadership, and personal growth.
                                 <br><br>
-                                Nam non sollicitudin lacus. Nullam euismod justo dictum ex euismod pellentesque.
-                                Suspendisse potenti. Vestibulum ultricies, elit at dapibus placerat.
+                                Our mission is to inspire action, share meaningful insight, and empower people to think bigger and perform better, whether you are building your first company, leading a team, or designing your next career move.
                             </p>
                             <h5 class="font-1 fw-bold ">Listen Our Podcast On</h5>
                             <div class="d-flex flex-lg-row gap-3">
@@ -119,8 +115,8 @@
         <section class="section">
             <div class="r-container">
                 <div class="d-flex flex-column gap-3 h-100 justify-content-center text-center gap-3">
-                    <span class="fs-5">Our Values</span>
-                    <h3 class="font-1 fw-bold lh-1">You <span class="accent-color">Must</span> Listen to Our Podcast
+                    <span class="fs-5">What You Can Expect</span>
+                    <h3 class="font-1 fw-bold lh-1">Why Leaders Listen to <span class="accent-color">The NashCast</span>
                     </h3>
                     <div class="row row-cols-1 row-cols-lg-3">
                         <div class="col  mb-3">
@@ -128,9 +124,8 @@
                                 <span class="accent-color" style="font-size: 5.175rem;">
                                     <i class="fa-solid fa-award"></i>
                                 </span>
-                                <h5 class="font-1 fw-bold">Best Sound Quality</h5>
-                                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut elit tellus, luctus nec
-                                    ullamcorper mattis, pulvinar.</p>
+                                <h5 class="font-1 fw-bold">Conversations That Inspire, Educate, and Empower</h5>
+                                <p>The NashCast is designed for people who want depth over hype. Every episode blends real-world stories with practical lessons you can apply to how you think, lead, and build.</p>
                                 <div class="my-5">
                                     <a href="" class="link-white font-1 fw-bold ">
                                         LEARN MORE
@@ -144,9 +139,8 @@
                                 <span class="accent-color" style="font-size: 5.175rem;">
                                     <i class="fa-solid fa-users"></i>
                                 </span>
-                                <h5 class="font-1 fw-bold">Famous Interviewees</h5>
-                                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut elit tellus, luctus nec
-                                    ullamcorper mattis, pulvinar.</p>
+                                <h5 class="font-1 fw-bold">Exploring Ideas, Insights, and Innovation</h5>
+                                <p>From strategy and finance to technology and personal growth, we unpack the thinking, systems, and frameworks behind how high-performers make decisions and execute.</p>
                                 <div class="my-5">
                                     <a href="" class="link-white font-1 fw-bold ">
                                         LEARN MORE
@@ -160,9 +154,8 @@
                                 <span class="accent-color" style="font-size: 5.175rem;">
                                     <i class="fa-solid fa-icons"></i>
                                 </span>
-                                <h5 class="font-1 fw-bold">Interesting Topic</h5>
-                                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut elit tellus, luctus nec
-                                    ullamcorper mattis, pulvinar.</p>
+                                <h5 class="font-1 fw-bold">Bringing You the Leaders, Dreamers, and Doers</h5>
+                                <p>We spotlight builders who are in the arena, founders, executives, and creators who are actively shaping the future of their industries and communities.</p>
                                 <div class="my-5">
                                     <a href="" class="link-white font-1 fw-bold ">
                                         LEARN MORE
@@ -383,11 +376,9 @@
                     <div class="image-overlay-2"></div>
                     <div class="row row-cols-1 row-cols-lg-2 position-relative" style="z-index: 2;">
                         <div class="col  mb-3">
-                            <h3 class="font-1 fw-bold lh-1"><span class="accent-color">Subscribe</span> For The Latest
-                                Episodes</h3>
+                            <h3 class="font-1 fw-bold lh-1"><span class="accent-color">Subscribe</span> To The NashCast</h3>
                             <p class="text-gray">
-                                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut elit tellus, luctus nec
-                                ullamcorper mattis, pulvinar dapibus leo.
+                                Join The NashCast community on YouTube to get every new episode, bite-sized clips, and behind-the-scenes content as soon as it drops.
                             </p>
                         </div>
                         <div class="col  mb-3">

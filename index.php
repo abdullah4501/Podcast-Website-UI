@@ -16,19 +16,19 @@
                     <div class="col h-100 p-lg-0">
                         <div class="d-flex flex-column gap-3 justify-content-center h-100">
                             <h1 class="font-1 fw-bold lh-1">
-                                Taking Podcast To <span class="accent-color">The Next Level</span>
+                                Powerful Conversations To Help You <span class="accent-color">Think, Lead, and Succeed</span>
                             </h1>
                             <p class="text-gray fs-5">
-                                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut elit tellus, luctus nec
-                                ullamcorper mattis, pulvinar dapibus leo.
+                                Welcome to The NashCast, a YouTube podcast hosted by Adeel Shaikh and built for professionals, founders, and lifelong learners who want more than surface-level content.
+                                Learn how entrepreneurs, industry experts, and changemakers make decisions, overcome challenges, and build meaningful, sustainable impact.
                             </p>
                             <div class="d-flex flex-lg-row flex-column gap-lg-5 gap-4">
-                                <a href="" class="btn button font-1 ls-2">LEARN MORE</a>
+                                <a href="about-us" class="btn button font-1 ls-2">ABOUT THE NASHCAST</a>
                                 <div class="d-flex flex-row gap-3 align-items-center">
                                     <button type="button" class="btn request-loader" data-bs-toggle="modal" data-bs-target="#exampleModal" fdprocessedid="0j5hba">
                                         <i class="fa-solid fa-play ms-1"></i>
                                     </button>
-                                    <span class="font-1 ls-2 fw-bold">START LISTENING</span>
+                                    <span class="font-1 ls-2 fw-bold logo-green">START LISTENING</span>
                                 </div>
                             </div>
                         </div>
@@ -75,11 +75,8 @@
         <section class="section">
             <div class="r-container">
                 <div class="d-flex flex-column gap-3 text-center">
-                    <h3 class="font-1 fw-bold">Most <span class="accent-color">Favorite</span> Podcast</h3>
-                    <p class="mx-auto text-gray" style="max-width: 768px;">Lorem ipsum dolor sit amet, consectetur
-                        adipiscing
-                        elit. Morbi pharetra magna a lacus dignissim, sed scelerisque elit rutrum. Nam a pulvinar
-                        sapien, a placerat arcu. Nam condimentum orci et semper rutrum.</p>
+                    <h3 class="font-1 fw-bold">Most <span class="logo-blue">Impactful</span> Conversations</h3>
+                    <p class="mx-auto text-gray" style="max-width: 768px;">Deep-dive episodes from The NashCast featuring entrepreneurs, operators, and changemakers across business, finance, technology, leadership, and personal growth, curated to help you think bigger and execute better.</p>
                     <div class="row row-cols-1 row-cols-lg-3 w-100 text-start">
                         <div class="col  mb-3">
                             <div class="d-flex flex-column gap-3 h-100">
@@ -194,17 +191,13 @@
                 <div class="row row-cols-1 row-cols-lg-2 w-100">
                     <div class="col mb-lg-0 mb-5">
                         <div class="d-flex flex-column gap-3 h-100 justify-content-center">
-                            <span class="fs-5">About Us</span>
-                            <h3 class="font-1 fw-bold lh-1">We Provide The <span class="accent-color">Latest</span>
-                                Podcast For You</h3>
+                            <span class="fs-5">About The NashCast</span>
+                            <h3 class="font-1 fw-bold lh-1">Conversations That Shape How You <span class="logo-blue">Think, Lead, and Succeed</span></h3>
                             <p class="text-gray">
-                                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus facilisis, neque id
-                                dapibus commodo, est libero ultricies felis, venenatis pulvinar eros magna dapibus
-                                turpis. Curabitur vel congue quam. Donec eleifend dui nec dui malesuada, id consectetur
-                                arcu aliquet.
+                                The NashCast is a YouTube podcast hosted by Adeel Shaikh, featuring in-depth conversations with entrepreneurs, industry experts, and changemakers across business, finance, technology, leadership, and personal growth.
+                                Each episode is designed to deliver real-world insight, strategic thinking, and practical knowledge you can apply immediately to your work, your company, and your life.
                                 <br><br>
-                                Nam non sollicitudin lacus. Nullam euismod justo dictum ex euismod pellentesque.
-                                Suspendisse potenti. Vestibulum ultricies, elit at dapibus placerat.
+                                Our mission is to inspire action, share meaningful insight, and empower people to think bigger and perform better, whether you're building a business, leading a team, or investing in your own growth.
                             </p>
                             <h5 class="font-1 fw-bold ">Listen Our Podcast On</h5>
                             <div class="d-flex flex-lg-row gap-3">
@@ -256,19 +249,16 @@
         <section class="section">
             <div class="r-container">
                 <div class="d-flex flex-column gap-3 text-center">
-                    <span class="fs-5">Our Team</span>
-                    <h3 class="font-1 fw-bold">Meet Our <span class="accent-color">Host</span></h3>
-                    <p class="mx-auto text-gray" style="max-width: 768px;">Lorem ipsum dolor sit amet, consectetur
-                        adipiscing
-                        elit. Morbi pharetra magna a lacus dignissim, sed scelerisque elit rutrum. Nam a pulvinar
-                        sapien, a placerat arcu. Nam condimentum orci et semper rutrum.</p>
+                    <span class="fs-5">Our Host & Guests</span>
+                    <h3 class="font-1 fw-bold">Behind <span class="logo-blue">The NashCast</span></h3>
+                    <p class="mx-auto text-gray" style="max-width: 768px;">The NashCast is hosted by Adeel Shaikh and amplified by a network of founders, operators, and experts who live what they teach. Across episodes you’ll hear unfiltered stories, frameworks, and lessons from people building real companies, leading real teams, and navigating real challenges.</p>
                     <div class="row row-cols-1 row-cols-lg-3">
                         <div class="col mb-3">
                             <div class="d-flex flex-column bg-secondary-color p-4 rounded-3">
                                 <img src="image/image-600x700-2.jpg" alt="image" class="img-fluid rounded-3 mb-3">
                                 <div class="mb-4">
                                     <h5 class="font-1 fw-bold m-0 lh-1">Emilly Spector</h5>
-                                    <span class="accent-color">Expert Host</span>
+                                    <span class="logo-blue fw-medium">Expert Host</span>
                                 </div>
                                 <div class="social-container mb-3 justify-content-center">
                                     <a href="https://www.facebook.com" class="social-item">
@@ -288,7 +278,7 @@
                                 <img src="image/image-600x700-3.jpg" alt="image" class="img-fluid rounded-3 mb-3">
                                 <div class="mb-4">
                                     <h5 class="font-1 fw-bold m-0 lh-1">Baron Mordo</h5>
-                                    <span class="accent-color">Expert Host</span>
+                                    <span class="logo-blue fw-medium">Expert Host</span>
                                 </div>
                                 <div class="social-container mb-3 justify-content-center">
                                     <a href="https://www.facebook.com" class="social-item">
@@ -308,7 +298,7 @@
                                 <img src="image/image-600x700-4.jpg" alt="image" class="img-fluid rounded-3 mb-3">
                                 <div class="mb-4">
                                     <h5 class="font-1 fw-bold m-0 lh-1">Eva James</h5>
-                                    <span class="accent-color">Expert Host</span>
+                                    <span class="logo-blue fw-medium">Expert Host</span>
                                 </div>
                                 <div class="social-container mb-3 justify-content-center">
                                     <a href="https://www.facebook.com" class="social-item">
@@ -431,15 +421,10 @@
                     <div class="col col-lg-6">
                         <div class="d-flex flex-column gap-3">
                             <span class="fs-5">Testimonials</span>
-                            <h3 class="font-1 fw-bold lh-1">What <span class="accent-color">Listener</span> Says</h3>
+                            <h3 class="font-1 fw-bold lh-1">What <span class="logo-blue">Listeners</span> Say</h3>
                             <p class="text-gray">
-                                Phasellus facilisis, neque id dapibus commodo, est libero ultricies felis, venenatis
-                                pulvinar eros magna dapibus turpis. Donec eleifend dui nec dui malesuada, id
-                                consectetur.
-                                <br><br>
-                                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus facilisis, neque id
-                                dapibus commodo, est libero ultricies felis, venenatis pulvinar eros magna dapibus
-                                turpis. Curabitur vel congue quam. consectetur adipiscing elit.
+                                The NashCast is built for people who want more than motivation. Listeners come here for clarity, practical frameworks, and honest conversations about what it really takes to build, lead, and grow.
+                                Episodes are designed to leave you with at least one idea you can apply immediately in your work or life.
                             </p>
                             <div>
                                 <a href="" class="btn button font-1 ls-2">ALL TESTIMONIALS
@@ -457,7 +442,7 @@
             <div class="r-container position-relative" style="z-index: 2;">
                 <div class="d-flex flex-column text-center gap-3">
                     <span class="fs-5">Our Podcast</span>
-                    <h3 class="font-1 fw-bold lh-1"><span class="accent-color">Recent</span> Episodes</h3>
+                    <h3 class="font-1 fw-bold lh-1"><span class="logo-blue">Recent</span> Episodes</h3>
                     <div class="row row-cols-1 row-cols-lg-3">
                         <div class="col mb-4">
                             <div class="d-flex flex-column gap-3 h-100">
@@ -695,11 +680,9 @@
                     <div class="image-overlay-2"></div>
                     <div class="row row-cols-1 row-cols-lg-2 position-relative" style="z-index: 2;">
                         <div class="col  mb-3">
-                            <h3 class="font-1 fw-bold lh-1"><span class="accent-color">Subscribe</span> For The Latest
-                                Episodes</h3>
+                            <h3 class="font-1 fw-bold lh-1"><span class="logo-blue">Subscribe</span> To The NashCast</h3>
                             <p class="text-gray">
-                                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut elit tellus, luctus nec
-                                ullamcorper mattis, pulvinar dapibus leo.
+                                Subscribe on YouTube for full episodes, exclusive clips, and behind-the-scenes content that keeps you close to the leaders, dreamers, and doers shaping the future of business, technology, and leadership.
                             </p>
                         </div>
                         <div class="col  mb-3">
@@ -736,7 +719,7 @@
             <div class="r-container">
                 <div class="d-flex flex-column text-center gap-3">
                     <span class="fs-5">Our Partners</span>
-                    <h3 class="font-1 fw-bold lh-1">In <span class="accent-color">Collaboration</span> With</h3>
+                    <h3 class="font-1 fw-bold lh-1">In <span class="logo-blue">Collaboration</span> With</h3>
                     <p class="mx-auto text-gray" style="max-width: 768px;">Lorem ipsum dolor sit amet, consectetur
                         adipiscing
                         elit. Morbi pharetra magna a lacus dignissim, sed scelerisque elit rutrum. Nam a pulvinar
@@ -798,15 +781,9 @@
                     </div>
                     <div class="col col-lg-5 ps-lg-5 mb-3">
                         <div class="d-flex flex-column h-100 justify-content-center gap-3">
-                            <span class="fs-5">Our Blog</span>
-                            <h3 class="font-1 fw-bold lh-1"><span class="accent-color">Latest</span> News For You</h3>
-                            <p class="mx-auto text-gray" style="max-width: 768px;">Lorem ipsum dolor sit amet,
-                                Phasellus facilisis, neque id dapibus commodo, est libero ultricies felis, venenatis
-                                pulvinar eros magna dapibus turpis.
-                                <br><br>
-                                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus facilisis, neque id
-                                dapibus commodo, est libero ultricies felis, venenatis pulvinar eros magna dapibus
-                                turpis. Curabitur vel congue quam.
+                            <span class="fs-5">The NashCast Blog</span>
+                            <h3 class="font-1 fw-bold lh-1">Ideas, Insights, and <span class="logo-blue">Playbooks</span> For You</h3>
+                            <p class="mx-auto text-gray" style="max-width: 768px;">Go deeper on the ideas shared in The NashCast. Explore episode breakdowns, mental models, and practical frameworks on leadership, strategy, execution, and personal growth, built to help you turn conversation into action.
                             </p>
                             <div>
                                 <a href="" class="btn button font-1 ls-2">ALL BLOGS
