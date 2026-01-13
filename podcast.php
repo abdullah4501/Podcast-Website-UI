@@ -28,7 +28,7 @@
         <section class="section">
             <div class="r-container">
                 <div class="d-flex flex-column gap-3 text-center">
-                    <h3 class="font-1 fw-bold">Start With These <span class="accent-color">NashCast</span> Episodes</h3>
+                    <h3 class="font-1 fw-bold">Start With These <span class="logo-blue">NashCast</span> Episodes</h3>
                     <p class="mx-auto text-gray" style="max-width: 768px;">A curated set of conversations that showcase what The NashCast is about, decision-making, leadership, execution, and personal growth in the real world.</p>
                     <div class="row row-cols-1 row-cols-lg-3 w-100 text-start">
                         <div class="col  mb-3">
@@ -144,7 +144,7 @@
             <div class="r-container position-relative" style="z-index: 2;">
                 <div class="d-flex flex-column text-center gap-3">
                     <span class="fs-5">The NashCast</span>
-                    <h3 class="font-1 fw-bold lh-1"><span class="accent-color">Recent</span> Conversations</h3>
+                    <h3 class="font-1 fw-bold lh-1"><span class="logo-blue">Recent</span> Conversations</h3>
                     <div class="row row-cols-1 row-cols-lg-3">
                         <div class="col mb-4">
                             <div class="d-flex flex-column gap-3 h-100">
@@ -370,47 +370,6 @@
                     <div class="d-flex justify-content-center">
                         <a href="" class="btn button font-1 ls-2">VIEW ALL PODCASTS
                         </a>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <!-- Subscribe -->
-        <section class="section">
-            <div class="r-container">
-                <div class="section position-relative rounded-4 overflow-hidden bg-attach-fixed" style="background-image: url(image/image-1920x900-3.jpg);">
-                    <div class="image-overlay-2"></div>
-                    <div class="row row-cols-1 row-cols-lg-2 position-relative" style="z-index: 2;">
-                        <div class="col  mb-3">
-                            <h3 class="font-1 fw-bold lh-1"><span class="accent-color">Subscribe</span> To The NashCast</h3>
-                            <p class="text-gray">
-                                Subscribe on YouTube to stay close to the conversations shaping the future of business, technology, and leadership.
-                            </p>
-                        </div>
-                        <div class="col  mb-3">
-                            <div class="d-flex h-100 flex-column justify-content-center">
-                                <h5 class="font-1 fw-bold">Newsletter</h5>
-                                <form class="w-100 form needs-validation">
-                                    <input type="text" name="action" value="subscribe" hidden="">
-                                    <div class="input-group mb-3">
-                                        <input type="email" name="email" class="form-control py-3 px-4 form-white" placeholder="Your Email" aria-label="Recipient's username" aria-describedby="button-addon2" required="" fdprocessedid="we53co">
-                                        <button class="btn button btn_submit-subscribe font-1  fw-bold px-5" type="submit" id="button-addon2" fdprocessedid="a7yw4">Subscribe</button>
-                                    </div>
-                                </form>
-                            </div>
-                            <div class="toast-container position-fixed bottom-0 end-0 p-3">
-                                <div id="liveToast" class="toast success_msg_subscribe bg-dark-transparent text-white" role="alert" aria-live="assertive" aria-atomic="true">
-                                    <div class="d-flex">
-                                        <div class="toast-body">
-                                            Your Subscribe Send Successfully!.
-                                        </div>
-                                        <button type="button" class="btn me-2 m-auto text-white" data-bs-dismiss="toast" aria-label="Close">
-                                            <i class="fa-solid fa-xmark"></i>
-                                        </button>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
                     </div>
                 </div>
             </div>

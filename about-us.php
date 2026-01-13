@@ -32,7 +32,7 @@
                     <div class="col mb-lg-0 mb-5">
                         <div class="d-flex flex-column gap-3 h-100 justify-content-center">
                             <span class="fs-5">About The NashCast</span>
-                            <h3 class="font-1 fw-bold lh-1">Inside <span class="accent-color">The NashCast</span> Podcast</h3>
+                            <h3 class="font-1 fw-bold lh-1">Inside <span class="logo-blue">The NashCast</span> Podcast</h3>
                             <p class="text-gray">
                                 The NashCast is a YouTube podcast hosted by Adeel Shaikh, focused on powerful conversations that shape how people think, lead, and succeed.
                                 We sit down with entrepreneurs, operators, investors, and subject-matter experts across business, finance, technology, leadership, and personal growth.
@@ -116,12 +116,12 @@
             <div class="r-container">
                 <div class="d-flex flex-column gap-3 h-100 justify-content-center text-center gap-3">
                     <span class="fs-5">What You Can Expect</span>
-                    <h3 class="font-1 fw-bold lh-1">Why Leaders Listen to <span class="accent-color">The NashCast</span>
+                    <h3 class="font-1 fw-bold lh-1">Why Leaders Listen to <br><span class="logo-blue">The NashCast</span>
                     </h3>
                     <div class="row row-cols-1 row-cols-lg-3">
                         <div class="col  mb-3">
                             <div class="bg-secondary-dark px-5 py-3 rounded-3">
-                                <span class="accent-color" style="font-size: 5.175rem;">
+                                <span class="logo-blue" style="font-size: 5.175rem;">
                                     <i class="fa-solid fa-award"></i>
                                 </span>
                                 <h5 class="font-1 fw-bold">Conversations That Inspire, Educate, and Empower</h5>
@@ -136,7 +136,7 @@
                         </div>
                         <div class="col  mb-3">
                             <div class="bg-secondary-dark px-5 py-3 rounded-3">
-                                <span class="accent-color" style="font-size: 5.175rem;">
+                                <span class="logo-blue" style="font-size: 5.175rem;">
                                     <i class="fa-solid fa-users"></i>
                                 </span>
                                 <h5 class="font-1 fw-bold">Exploring Ideas, Insights, and Innovation</h5>
@@ -151,7 +151,7 @@
                         </div>
                         <div class="col  mb-3">
                             <div class="bg-secondary-dark px-5 py-3 rounded-3">
-                                <span class="accent-color" style="font-size: 5.175rem;">
+                                <span class="logo-blue" style="font-size: 5.175rem;">
                                     <i class="fa-solid fa-icons"></i>
                                 </span>
                                 <h5 class="font-1 fw-bold">Bringing You the Leaders, Dreamers, and Doers</h5>
@@ -179,9 +179,9 @@
                             <!-- Slider main container -->
                             <div class="swiper swiper-initialized swiper-horizontal swiper-backface-hidden swiper-pagination-disabled">
                                 <!-- Additional required wrapper -->
-                                <div class="swiper-wrapper" id="swiper-wrapper-68e29cf105e34133b" aria-live="off" style="cursor: grab; transition-duration: 0ms; transform: translate3d(-730px, 0px, 0px);">
+                                <div class="swiper-wrapper" id="swiper-wrapper-6734d37033ad0bac" aria-live="off" style="cursor: grab; transition-duration: 2000ms; transform: translate3d(0px, 0px, 0px);">
                                     <!-- Slides -->
-                                    <div class="swiper-slide swiper-slide-prev" role="group" aria-label="1 / 3" style="width: 720px; margin-right: 10px;">
+                                    <div class="swiper-slide swiper-slide-active" role="group" aria-label="1 / 3" style="width: 720px; margin-right: 10px;">
                                         <div class="testimonial-container">
                                             <ul class="rating">
                                                 <li><i class="fa-solid fa-star"></i></li>
@@ -209,7 +209,7 @@
                                             </div>
                                         </div>
                                     </div>
-                                    <div class="swiper-slide swiper-slide-active" role="group" aria-label="2 / 3" style="width: 720px; margin-right: 10px;">
+                                    <div class="swiper-slide swiper-slide-next" role="group" aria-label="2 / 3" style="width: 720px; margin-right: 10px;">
                                         <div class="testimonial-container">
                                             <ul class="rating">
                                                 <li><i class="fa-solid fa-star"></i></li>
@@ -237,7 +237,7 @@
                                             </div>
                                         </div>
                                     </div>
-                                    <div class="swiper-slide swiper-slide-next" role="group" aria-label="3 / 3" style="width: 720px; margin-right: 10px;">
+                                    <div class="swiper-slide" role="group" aria-label="3 / 3" style="width: 720px; margin-right: 10px;">
                                         <div class="testimonial-container">
                                             <ul class="rating">
                                                 <li><i class="fa-solid fa-star"></i></li>
@@ -266,22 +266,16 @@
                                         </div>
                                     </div>
                                 </div>
-                                <span class="swiper-notification" aria-live="assertive" aria-atomic="true"></span>
-                            </div>
+                            <span class="swiper-notification" aria-live="assertive" aria-atomic="true"></span></div>
                         </div>
                     </div>
                     <div class="col col-lg-6">
                         <div class="d-flex flex-column gap-3">
                             <span class="fs-5">Testimonials</span>
-                            <h3 class="font-1 fw-bold lh-1">What <span class="accent-color">Listener</span> Says</h3>
+                            <h3 class="font-1 fw-bold lh-1">What <span class="logo-blue">Listeners</span> Say</h3>
                             <p class="text-gray">
-                                Phasellus facilisis, neque id dapibus commodo, est libero ultricies felis, venenatis
-                                pulvinar eros magna dapibus turpis. Donec eleifend dui nec dui malesuada, id
-                                consectetur.
-                                <br><br>
-                                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus facilisis, neque id
-                                dapibus commodo, est libero ultricies felis, venenatis pulvinar eros magna dapibus
-                                turpis. Curabitur vel congue quam. consectetur adipiscing elit.
+                                The NashCast is built for people who want more than motivation. Listeners come here for clarity, practical frameworks, and honest conversations about what it really takes to build, lead, and grow.
+                                Episodes are designed to leave you with at least one idea you can apply immediately in your work or life.
                             </p>
                             <div>
                                 <a href="" class="btn button font-1 ls-2">ALL TESTIMONIALS
@@ -297,19 +291,16 @@
         <section class="section">
             <div class="r-container">
                 <div class="d-flex flex-column gap-3 text-center">
-                    <span class="fs-5">Our Team</span>
-                    <h3 class="font-1 fw-bold">Meet Our <span class="accent-color">Host</span></h3>
-                    <p class="mx-auto text-gray" style="max-width: 768px;">Lorem ipsum dolor sit amet, consectetur
-                        adipiscing
-                        elit. Morbi pharetra magna a lacus dignissim, sed scelerisque elit rutrum. Nam a pulvinar
-                        sapien, a placerat arcu. Nam condimentum orci et semper rutrum.</p>
+                    <span class="fs-5">Our Host & Guests</span>
+                    <h3 class="font-1 fw-bold">Behind <span class="logo-blue">The NashCast</span></h3>
+                    <p class="mx-auto text-gray" style="max-width: 768px;">The NashCast is hosted by Adeel Shaikh and amplified by a network of founders, operators, and experts who live what they teach. Across episodes you’ll hear unfiltered stories, frameworks, and lessons from people building real companies, leading real teams, and navigating real challenges.</p>
                     <div class="row row-cols-1 row-cols-lg-3">
                         <div class="col mb-3">
                             <div class="d-flex flex-column bg-secondary-color p-4 rounded-3">
                                 <img src="image/image-600x700-2.jpg" alt="image" class="img-fluid rounded-3 mb-3">
                                 <div class="mb-4">
                                     <h5 class="font-1 fw-bold m-0 lh-1">Emilly Spector</h5>
-                                    <span class="accent-color">Expert Host</span>
+                                    <span class="logo-blue fw-medium">Expert Host</span>
                                 </div>
                                 <div class="social-container mb-3 justify-content-center">
                                     <a href="https://www.facebook.com" class="social-item">
@@ -329,7 +320,7 @@
                                 <img src="image/image-600x700-3.jpg" alt="image" class="img-fluid rounded-3 mb-3">
                                 <div class="mb-4">
                                     <h5 class="font-1 fw-bold m-0 lh-1">Baron Mordo</h5>
-                                    <span class="accent-color">Expert Host</span>
+                                    <span class="logo-blue fw-medium">Expert Host</span>
                                 </div>
                                 <div class="social-container mb-3 justify-content-center">
                                     <a href="https://www.facebook.com" class="social-item">
@@ -349,7 +340,7 @@
                                 <img src="image/image-600x700-4.jpg" alt="image" class="img-fluid rounded-3 mb-3">
                                 <div class="mb-4">
                                     <h5 class="font-1 fw-bold m-0 lh-1">Eva James</h5>
-                                    <span class="accent-color">Expert Host</span>
+                                    <span class="logo-blue fw-medium">Expert Host</span>
                                 </div>
                                 <div class="social-container mb-3 justify-content-center">
                                     <a href="https://www.facebook.com" class="social-item">
@@ -368,7 +359,7 @@
                 </div>
             </div>
         </section>
-
+        
         <!-- Subscribe -->
         <section class="section">
             <div class="r-container">
@@ -376,9 +367,9 @@
                     <div class="image-overlay-2"></div>
                     <div class="row row-cols-1 row-cols-lg-2 position-relative" style="z-index: 2;">
                         <div class="col  mb-3">
-                            <h3 class="font-1 fw-bold lh-1"><span class="accent-color">Subscribe</span> To The NashCast</h3>
+                            <h3 class="font-1 fw-bold lh-1"><span class="logo-blue">Subscribe</span> To The NashCast</h3>
                             <p class="text-gray">
-                                Join The NashCast community on YouTube to get every new episode, bite-sized clips, and behind-the-scenes content as soon as it drops.
+                                Subscribe on YouTube for full episodes, exclusive clips, and behind-the-scenes content that keeps you close to the leaders, dreamers, and doers shaping the future of business, technology, and leadership.
                             </p>
                         </div>
                         <div class="col  mb-3">
@@ -387,8 +378,8 @@
                                 <form class="w-100 form needs-validation">
                                     <input type="text" name="action" value="subscribe" hidden="">
                                     <div class="input-group mb-3">
-                                        <input type="email" name="email" class="form-control py-3 px-4 form-white" placeholder="Your Email" aria-label="Recipient's username" aria-describedby="button-addon2" required="" fdprocessedid="wgto8e">
-                                        <button class="btn button btn_submit-subscribe font-1  fw-bold px-5" type="submit" id="button-addon2" fdprocessedid="awtodb">Subscribe</button>
+                                        <input type="email" name="email" class="form-control py-3 px-4 form-white" placeholder="Your Email" aria-label="Recipient's username" aria-describedby="button-addon2" required="" fdprocessedid="q5s7agg">
+                                        <button class="btn button btn_submit-subscribe font-1  fw-bold px-5" type="submit" id="button-addon2" fdprocessedid="tmg8">Subscribe</button>
                                     </div>
                                 </form>
                             </div>
@@ -415,7 +406,7 @@
             <div class="r-container">
                 <div class="d-flex flex-column text-center gap-3">
                     <span class="fs-5">Our Partners</span>
-                    <h3 class="font-1 fw-bold lh-1">In <span class="accent-color">Collaboration</span> With</h3>
+                    <h3 class="font-1 fw-bold lh-1">In <span class="logo-blue">Collaboration</span> With</h3>
                     <p class="mx-auto text-gray" style="max-width: 768px;">Lorem ipsum dolor sit amet, consectetur
                         adipiscing
                         elit. Morbi pharetra magna a lacus dignissim, sed scelerisque elit rutrum. Nam a pulvinar
