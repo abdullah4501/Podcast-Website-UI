@@ -513,7 +513,7 @@ if (!$apiKey) {
                     <?php endforeach; ?>
                 </div>
                 <div class="d-flex justify-content-center">
-                    <a aria-current="page" href="podcasts" class="btn button font-1 ls-2">VIEW ALL PODCASTS
+                    <a aria-current="page" href="podcast" class="btn button font-1 ls-2">VIEW ALL PODCASTS
                     </a>
                 </div>
             </div>
