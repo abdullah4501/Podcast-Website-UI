@@ -34,7 +34,7 @@
                             <span class="fs-5">About The NashCast</span>
                             <h3 class="font-1 fw-bold lh-1">Inside <span class="logo-blue">The NashCast</span> Podcast</h3>
                             <p class="text-gray">
-                                The NashCast is a YouTube podcast hosted by Adeel Shaikh, focused on powerful conversations that shape how people think, lead, and succeed.
+                                The NashCast is a YouTube podcast hosted by Adeel Shaikh & Nabeel Shaikh, focused on powerful conversations that shape how people think, lead, and succeed.
                                 We sit down with entrepreneurs, operators, investors, and subject-matter experts across business, finance, technology, leadership, and personal growth.
                                 <br><br>
                                 Our mission is to inspire action, share meaningful insight, and empower people to think bigger and perform better, whether you are building your first company, leading a team, or designing your next career move.
@@ -293,7 +293,7 @@
                 <div class="d-flex flex-column gap-3 text-center">
                     <span class="fs-5">Our Host & Guests</span>
                     <h3 class="font-1 fw-bold">Behind <span class="logo-blue">The NashCast</span></h3>
-                    <p class="mx-auto text-gray" style="max-width: 768px;">The NashCast is hosted by Adeel Shaikh and amplified by a network of founders, operators, and experts who live what they teach. Across episodes you’ll hear unfiltered stories, frameworks, and lessons from people building real companies, leading real teams, and navigating real challenges.</p>
+                    <p class="mx-auto text-gray" style="max-width: 768px;">The NashCast is hosted by Adeel Shaikh & Nabeel Shaikh and amplified by a network of founders, operators, and experts who live what they teach. Across episodes you’ll hear unfiltered stories, frameworks, and lessons from people building real companies, leading real teams, and navigating real challenges.</p>
                     <div class="row row-cols-1 row-cols-lg-3">
                         <div class="col mb-3">
                             <div class="d-flex flex-column bg-secondary-color p-4 rounded-3">

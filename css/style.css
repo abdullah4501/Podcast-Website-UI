@@ -1,4 +1,3 @@
-
 @property --progress {
     syntax: '<integer>';
     inherits: true;
@@ -166,7 +165,7 @@ a {
 .form select {
     background-color: transparent;
     border-radius: 0;
-    border: solid 2px var(--accent-color) ;
+    border: solid 2px var(--accent-color);
     color: white;
 }
 
@@ -174,7 +173,7 @@ a {
 .form textarea:focus,
 .form select:focus {
     box-shadow: none;
-    border: solid 2px var(--accent-color) ;
+    border: solid 2px var(--accent-color);
 
 }
 
@@ -329,16 +328,18 @@ a {
 }
 
 .logo-blue {
-  color:  #0C7FFE ;
+    color: #0C7FFE;
 }
+
 .host-badge {
     background: var(--logo-blue);
     padding: 0 12px;
     font-weight: 500;
     border-radius: 6px;
 }
+
 .logo-green {
-  color:  #16A637 ;
+    color: #16A637;
 }
 
 .border-accent-color {
@@ -529,12 +530,49 @@ a {
     display: flex;
     justify-content: center;
     align-items: center;
-    background-color: var(--logo-blue);
     color: white;
 }
+.social-item.youtube {
+    background-color: #ff0033;
+}
+.social-item.facebook {
+    background-color: #0866FF;
+}
+.social-item.insta {
+    background-color: #c70095;
+}
+.social-item.twitter {
+    background-color: #000;
+}
+.social-item.tiktok {
+    background-color: #000;
+}
+.social-item.linkedin {
+    background-color: #0A66C2;
+}
 
-.social-item:hover {
-    color: var(--logo-blue) !important;
+.social-item.youtube:hover {
+    color: #ff0033 !important;
+    background-color: white;
+}
+.social-item.facebook:hover {
+    color: #0866FF !important;
+    background-color: white;
+}
+.social-item.insta:hover {
+    color: #c70095 !important;
+    background-color: white;
+}
+.social-item.twitter:hover {
+    color: #000 !important;
+    background-color: white;
+}
+.social-item.tiktok:hover {
+    color: #000 !important;
+    background-color: white;
+}
+.social-item.linkedin:hover {
+    color: #0A66C2 !important;
     background-color: white;
 }
 
@@ -955,4 +993,12 @@ a {
     .dropdown-menu {
         width: 100%;
     }
+}
+
+/* Additional  */
+.truncate {
+    overflow: hidden !important;
+    display: -webkit-box !important;
+    -webkit-box-orient: vertical !important;
+    -webkit-line-clamp: 2 !important;
 }
