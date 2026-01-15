@@ -183,7 +183,7 @@ include 'layouts/header.php';
                 <div class="col mb-lg-0 mb-5">
                     <div class="d-flex flex-column gap-3 h-100 justify-content-center">
                         <span class="fs-5">About The NashCast</span>
-                        <h3 class="font-1 fw-bold lh-1">Conversations That Shape How You <span class="logo-blue">Think,</span> <span class="accent-color">Lead</span>  and <span class="logo-green"> Succeed</span></h3>
+                        <h3 class="font-1 fw-bold lh-1">Conversations That Shape How You <span class="logo-blue">Think,</span> <span class="accent-color">Lead</span> and <span class="logo-green"> Succeed</span></h3>
                         <p class="text-gray">
                             The NashCast is a YouTube podcast hosted by Adeel Shaikh & Nabeel Shaikh, featuring in-depth conversations with entrepreneurs, industry experts, and changemakers across business, finance, technology, leadership, and personal growth.
                             Each episode is designed to deliver real-world insight, strategic thinking, and practical knowledge you can apply immediately to your work, your company, and your life.
@@ -240,15 +240,19 @@ include 'layouts/header.php';
     <section class="section">
         <div class="r-container">
             <div class="d-flex flex-column gap-3 text-center">
-                <span class="fs-5">Our Host & Guests</span>
+                <span class="fs-5">Our Hosts</span>
                 <h3 class="font-1 fw-bold">Behind <span class="accent-color">The</span> <span class="logo-blue">Nash</span><span class="logo-green">Cast</span></h3>
                 <p class="mx-auto text-gray" style="max-width: 768px;">The NashCast is hosted by Adeel Shaikh & Nabeel Shaikh and amplified by a network of founders, operators, and experts who live what they teach. Across episodes you’ll hear unfiltered stories, frameworks, and lessons from people building real companies, leading real teams, and navigating real challenges.</p>
-                <div class="row row-cols-1 row-cols-lg-3">
+                <div class="row row-cols-1 row-cols-lg-2">
                     <div class="col mb-3">
                         <div class="d-flex flex-column bg-secondary-color p-4 rounded-3">
-                            <img src="image/image-600x700-2.jpg" alt="image" class="img-fluid rounded-3 mb-3">
+                            <img src="image/host1.jpg"
+                                alt="image"
+                                class="img-fluid rounded-3 mb-3 mx-auto d-block mb-4"
+                                style="max-width: 80%;">
+
                             <div class="mb-4">
-                                <h5 class="font-1 fw-bold m-0 lh-1">Emilly Spector</h5>
+                                <h5 class="font-1 fw-bold m-0 lh-1">Adeel Shaikh</h5>
                                 <span class="logo-blue fw-medium">Expert Host</span>
                             </div>
                             <div class="social-container mb-3 justify-content-center">
@@ -266,29 +270,13 @@ include 'layouts/header.php';
                     </div>
                     <div class="col mb-3">
                         <div class="d-flex flex-column bg-secondary-color p-4 rounded-3">
-                            <img src="image/image-600x700-3.jpg" alt="image" class="img-fluid rounded-3 mb-3">
+                            <img src="image/host2.jpeg"
+                                alt="image"
+                                class="img-fluid rounded-3 mb-3 mx-auto d-block mb-4"
+                                style="max-width: 80%;">
+
                             <div class="mb-4">
-                                <h5 class="font-1 fw-bold m-0 lh-1">Baron Mordo</h5>
-                                <span class="logo-blue fw-medium">Expert Host</span>
-                            </div>
-                            <div class="social-container mb-3 justify-content-center">
-                                <a href="https://www.facebook.com" class="social-item">
-                                    <i class="fa-brands fa-facebook-f"></i>
-                                </a>
-                                <a href="https://www.twitter.com" class="social-item">
-                                    <i class="fa-brands fa-twitter"></i>
-                                </a>
-                                <a href="https://www.youtube.com" class="social-item">
-                                    <i class="fa-brands fa-youtube"></i>
-                                </a>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col mb-3">
-                        <div class="d-flex flex-column bg-secondary-color p-4 rounded-3">
-                            <img src="image/image-600x700-4.jpg" alt="image" class="img-fluid rounded-3 mb-3">
-                            <div class="mb-4">
-                                <h5 class="font-1 fw-bold m-0 lh-1">Eva James</h5>
+                                <h5 class="font-1 fw-bold m-0 lh-1">Nabeel Shaikh</h5>
                                 <span class="logo-blue fw-medium">Expert Host</span>
                             </div>
                             <div class="social-container mb-3 justify-content-center">
