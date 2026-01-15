@@ -32,12 +32,11 @@ if (!$apiKey) {
                             Learn how entrepreneurs, industry experts, and changemakers make decisions, overcome challenges, and build meaningful, sustainable impact.
                         </p>
                         <div class="d-flex flex-lg-row flex-column gap-lg-5 gap-4">
-                            <a href="about-us" class="btn button font-1 ls-2">ABOUT THE NASHCAST</a>
                             <div class="d-flex flex-row gap-3 align-items-center">
                                 <a href="https://www.youtube.com/playlist?list=PLn8IsWI_eoZkUU_xUC3rJZuutrVFJiTYA" type="button" class="btn request-loader">
                                     <i class="fa-solid fa-play ms-1"></i>
                                 </a>
-                                <span class="font-1 ls-2 fw-bold logo-green">START WATCHING</span>
+                                <span class="font-1 ls-2 fw-bold accent-color">START WATCHING</span>
                             </div>
                         </div>
                     </div>
@@ -258,16 +257,32 @@ if (!$apiKey) {
 
                             <div class="mb-4">
                                 <h5 class="font-1 fw-bold m-0 lh-1">Adeel Shaikh</h5>
-                                <span class="logo-blue fw-medium">Expert Host</span>
+                                <span class="logo-blue fw-medium">Founder & Host</span>
                             </div>
                             <div class="social-container mb-3 justify-content-center">
-                                <a href="https://www.facebook.com" class="social-item">
-                                    <i class="fa-brands fa-facebook-f"></i>
+                                <a href="https://www.facebook.com/NashCast" class="social-item facebook">
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24" fill="currentColor" stroke="currentColor" stroke-width="0" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-facebook-icon lucide-facebook">
+                                        <path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z" />
+                                    </svg>
                                 </a>
-                                <a href="https://www.twitter.com" class="social-item">
-                                    <i class="fa-brands fa-twitter"></i>
+                                <a href="https://www.instagram.com/the.nash.cast/" class="social-item insta">
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-instagram-icon lucide-instagram">
+                                        <rect width="20" height="20" x="2" y="2" rx="5" ry="5" />
+                                        <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z" />
+                                        <line x1="17.5" x2="17.51" y1="6.5" y2="6.5" />
+                                    </svg>
                                 </a>
-                                <a href="https://www.youtube.com" class="social-item">
+                                <a href="https://x.com/factnash" class="social-item twitter">
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 640 640" fill="currentColor" stroke="currentColor" stroke-width="2.5">
+                                        <path d="M453.2 112L523.8 112L369.6 288.2L551 528L409 528L297.7 382.6L170.5 528L99.8 528L264.7 339.5L90.8 112L236.4 112L336.9 244.9L453.2 112zM428.4 485.8L467.5 485.8L215.1 152L173.1 152L428.4 485.8z" />
+                                    </svg>
+                                </a>
+                                <a href="https://www.linkedin.com/company/thenashcast" class="social-item linkedin">
+                                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 640" width="20" height="20" viewBox="0 0 640 640" fill="currentColor" stroke="currentColor" stroke-width="2.5"><!--!Font Awesome Free v7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free Copyright 2026 Fonticons, Inc.-->
+                                        <path d="M196.3 512L103.4 512L103.4 212.9L196.3 212.9L196.3 512zM149.8 172.1C120.1 172.1 96 147.5 96 117.8C96 103.5 101.7 89.9 111.8 79.8C121.9 69.7 135.6 64 149.8 64C164 64 177.7 69.7 187.8 79.8C197.9 89.9 203.6 103.6 203.6 117.8C203.6 147.5 179.5 172.1 149.8 172.1zM543.9 512L451.2 512L451.2 366.4C451.2 331.7 450.5 287.2 402.9 287.2C354.6 287.2 347.2 324.9 347.2 363.9L347.2 512L254.4 512L254.4 212.9L343.5 212.9L343.5 253.7L344.8 253.7C357.2 230.2 387.5 205.4 432.7 205.4C526.7 205.4 544 267.3 544 347.7L544 512L543.9 512z" />
+                                    </svg>
+                                </a>
+                                <a href="https://www.youtube.com/@theNashCast" class="social-item youtube">
                                     <i class="fa-brands fa-youtube"></i>
                                 </a>
                             </div>
@@ -282,16 +297,32 @@ if (!$apiKey) {
 
                             <div class="mb-4">
                                 <h5 class="font-1 fw-bold m-0 lh-1">Nabeel Shaikh</h5>
-                                <span class="logo-blue fw-medium">Expert Host</span>
+                                <span class="logo-blue fw-medium">Founder & Host</span>
                             </div>
                             <div class="social-container mb-3 justify-content-center">
-                                <a href="https://www.facebook.com" class="social-item">
-                                    <i class="fa-brands fa-facebook-f"></i>
+                                <a href="https://www.facebook.com/NashCast" class="social-item facebook">
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24" fill="currentColor" stroke="currentColor" stroke-width="0" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-facebook-icon lucide-facebook">
+                                        <path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z" />
+                                    </svg>
                                 </a>
-                                <a href="https://www.twitter.com" class="social-item">
-                                    <i class="fa-brands fa-twitter"></i>
+                                <a href="https://www.instagram.com/the.nash.cast/" class="social-item insta">
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-instagram-icon lucide-instagram">
+                                        <rect width="20" height="20" x="2" y="2" rx="5" ry="5" />
+                                        <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z" />
+                                        <line x1="17.5" x2="17.51" y1="6.5" y2="6.5" />
+                                    </svg>
                                 </a>
-                                <a href="https://www.youtube.com" class="social-item">
+                                <a href="https://x.com/factnash" class="social-item twitter">
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 640 640" fill="currentColor" stroke="currentColor" stroke-width="2.5">
+                                        <path d="M453.2 112L523.8 112L369.6 288.2L551 528L409 528L297.7 382.6L170.5 528L99.8 528L264.7 339.5L90.8 112L236.4 112L336.9 244.9L453.2 112zM428.4 485.8L467.5 485.8L215.1 152L173.1 152L428.4 485.8z" />
+                                    </svg>
+                                </a>
+                                <a href="https://www.linkedin.com/company/thenashcast" class="social-item linkedin">
+                                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 640" width="20" height="20" viewBox="0 0 640 640" fill="currentColor" stroke="currentColor" stroke-width="2.5"><!--!Font Awesome Free v7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free Copyright 2026 Fonticons, Inc.-->
+                                        <path d="M196.3 512L103.4 512L103.4 212.9L196.3 212.9L196.3 512zM149.8 172.1C120.1 172.1 96 147.5 96 117.8C96 103.5 101.7 89.9 111.8 79.8C121.9 69.7 135.6 64 149.8 64C164 64 177.7 69.7 187.8 79.8C197.9 89.9 203.6 103.6 203.6 117.8C203.6 147.5 179.5 172.1 149.8 172.1zM543.9 512L451.2 512L451.2 366.4C451.2 331.7 450.5 287.2 402.9 287.2C354.6 287.2 347.2 324.9 347.2 363.9L347.2 512L254.4 512L254.4 212.9L343.5 212.9L343.5 253.7L344.8 253.7C357.2 230.2 387.5 205.4 432.7 205.4C526.7 205.4 544 267.3 544 347.7L544 512L543.9 512z" />
+                                    </svg>
+                                </a>
+                                <a href="https://www.youtube.com/@theNashCast" class="social-item youtube">
                                     <i class="fa-brands fa-youtube"></i>
                                 </a>
                             </div>
@@ -482,7 +513,7 @@ if (!$apiKey) {
                     <?php endforeach; ?>
                 </div>
                 <div class="d-flex justify-content-center">
-                    <a href="/goodsound/podcast" class="btn button font-1 ls-2">VIEW ALL PODCASTS
+                    <a aria-current="page" href="podcasts" class="btn button font-1 ls-2">VIEW ALL PODCASTS
                     </a>
                 </div>
             </div>

@@ -53,24 +53,24 @@
                                     <ul class="list">
                                         <li class="d-flex flex-row align-items-center gap-3">
                                             <i class="fa-solid fa-chevron-right accent-color"></i>
-                                            <a href="" class="link-white">Home</a>
+                                            <a href="home" class="link-white <?= ($page == 'home') ? 'active' : ''; ?>" aria-current="page" href="home"">Home</a>
                                         </li>
                                         <li class="d-flex flex-row align-items-center gap-3">
                                             <i class="fa-solid fa-chevron-right accent-color"></i>
-                                            <a href="/goodsound/about-us" class="link-white">About Us</a>
+                                            <a  href="about-us " class="link-white <?= ($page == 'about') ? 'active' : ''; ?>">About Us</a>
                                         </li>
                                         <li class="d-flex flex-row align-items-center gap-3">
                                             <i class="fa-solid fa-chevron-right accent-color"></i>
-                                            <a href="/goodsound/podcast" class="link-white">Podcasts</a>
+                                            <a  href="podcast " class="link-white <?= ($page == 'podcast') ? 'active' : ''; ?>">Podcasts</a>
                                         </li>
                                         <li class="d-flex flex-row align-items-center gap-3">
                                             <i class="fa-solid fa-chevron-right accent-color"></i>
-                                            <a href="/goodsound/contact" class="link-white">Contact</a>
+                                            <a  href="contact " class="link-white <?= ($page == 'contact') ? 'active' : ''; ?>">Contact</a>
                                         </li>
                                         </li>
                                         <li class="d-flex flex-row align-items-center gap-3">
                                             <i class="fa-solid fa-chevron-right accent-color"></i>
-                                            <a href="/goodsound/team" class="link-white">Team</a>
+                                            <a href="team " class="link-white <?= ($page == 'team') ? 'active' : ''; ?>">Team</a>
                                         </li>
                                     </ul>
                                 </div>
@@ -103,7 +103,7 @@
                                             </div>
                                             <div class="d-flex flex-column">
                                                 <span class="fs-4 font-1 fw-bold">Call Us</span>
-                                                <span class="accent-color">+123-234-1234</span>
+                                                <span class="accent-color">+92 312-3850846</span>
                                             </div>
                                         </div>
                                         <div class="d-flex flex-row gap-3 align-items-center">
@@ -112,7 +112,7 @@
                                             </div>
                                             <div class="d-flex flex-column">
                                                 <span class="fs-4 font-1 fw-bold">Email</span>
-                                                <span class="accent-color">hello@awesomesite.com</span>
+                                                <span class="accent-color">contact@thenashcast.com</span>
                                             </div>
                                         </div>
                                     </div>
