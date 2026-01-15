@@ -36,7 +36,7 @@ if (!$apiKey) {
                                 <a href="https://www.youtube.com/playlist?list=PLn8IsWI_eoZkUU_xUC3rJZuutrVFJiTYA" type="button" class="btn request-loader">
                                     <i class="fa-solid fa-play ms-1"></i>
                                 </a>
-                                <span class="font-1 ls-2 fw-bold accent-color">START WATCHING</span>
+                                <span class="font-1 ls-2 fw-bold logo-green">START WATCHING</span>
                             </div>
                         </div>
                     </div>
