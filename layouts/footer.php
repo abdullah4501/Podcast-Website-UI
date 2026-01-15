@@ -53,11 +53,7 @@
                                     <ul class="list">
                                         <li class="d-flex flex-row align-items-center gap-3">
                                             <i class="fa-solid fa-chevron-right accent-color"></i>
-                                            <a href="home" class="link-white <?= ($page == 'home') ? 'active' : ''; ?>" aria-current="page" href="home"">Home</a>
-                                        </li>
-                                        <li class="d-flex flex-row align-items-center gap-3">
-                                            <i class="fa-solid fa-chevron-right accent-color"></i>
-                                            <a  href="about-us " class="link-white <?= ($page == 'about') ? 'active' : ''; ?>">About Us</a>
+                                            <a href="home" class="link-white <?= ($page == 'home') ? 'active' : ''; ?>" aria-current="page" href="home">Home</a>
                                         </li>
                                         <li class="d-flex flex-row align-items-center gap-3">
                                             <i class="fa-solid fa-chevron-right accent-color"></i>
@@ -94,7 +90,7 @@
                                             <div class="d-flex flex-column">
                                                 <span class="fs-4 font-1 fw-bold">
                                                     Address</span>
-                                                <span class="accent-color">99 Roving St., Big City, PKU 23456</span>
+                                                <span class="accent-color">Burj Khalifa Boulevard, Downtown Dubai, Dubai AE</span>
                                             </div>
                                         </div>
                                         <div class="d-flex flex-row gap-3 align-items-center">

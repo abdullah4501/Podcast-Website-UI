@@ -1,3 +1,7 @@
+<?php
+$basePath = rtrim(dirname($_SERVER['SCRIPT_NAME']), '/\\');
+$baseUrl  = $basePath === '' ? '/' : $basePath . '/';
+?>
 <!DOCTYPE html>
 <html lang="en" data-bs-theme="dark">
 
@@ -13,6 +17,8 @@
     <meta name="robots" content="noindex, nofollow">
     <meta name="viewport" content="width=device-width, minimum-scale=1, maximum-scale=1">
     <meta name="turbo-visit-control" content="reload">
+    <base href="<?= $baseUrl ?>">
+    <link rel="icon" href="favicon.ico" type="image/x-icon">
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Source+Sans+3:ital,wght@0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap">
     <link rel="stylesheet" href="css/vendor/bootstrap.min.css">
     <link rel="stylesheet" href="css/vendor/fontawesome.css">
@@ -28,7 +34,7 @@
         <div class="r-container">
             <nav class="navbar navbar-expand-lg">
                 <div class="container-fluid">
-                    <a class="navbar-brand" href="index.php">
+                    <a class="navbar-brand" aria-current="page" href="home">
                         <div class="logo-container">
                             <img src="image/logo_header.png" alt="logo" class="img-fluid">
                         </div>
@@ -40,9 +46,6 @@
                         <ul class="navbar-nav mx-auto mb-2 mb-lg-0 gap-3">
                             <li class="nav-item">
                                 <a class="nav-link <?= ($page == 'home') ? 'active' : ''; ?>" aria-current="page" href="home">Home</a>
-                            </li>
-                            <li class="nav-item">
-                                <a class="nav-link <?= ($page == 'about') ? 'active' : ''; ?>" href="about-us">About Us</a>
                             </li>
                             <li class="nav-item">
                                 <a class="nav-link <?= ($page == 'podcast') ? 'active' : ''; ?>" href="podcast">Podcasts</a>

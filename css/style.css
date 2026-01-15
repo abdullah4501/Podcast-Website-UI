@@ -624,7 +624,8 @@ a {
 }
 
 .breadcrumb .breadcrumb-item>a {
-    color: var(--accent-color);
+    color: var(--logo-green);
+    font-weight: 600;
 }
 
 .breadcrumb .breadcrumb-item.active {

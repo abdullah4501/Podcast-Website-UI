@@ -31,7 +31,7 @@
                     <div class="col mb-3">
                         <div class="d-flex flex-column gap-3">
                             <span class="fs-5">Contact The NashCast</span>
-                            <h3 class="font-1 fw-bold lh-1">Send Your <span class="accent-color">Questions, Ideas, or Guest Suggestions</span>
+                            <h3 class="font-1 fw-bold lh-1">Send Your <span class="accent-color">Questions,</span> <span class="logo-blue">Ideas,</span> or <span class="logo-green">Guest Suggestions</span>
                             </h3>
                             <p class="text-gray">Whether you want to suggest a guest, explore a partnership, or share how an episode helped you, we’d love to hear from you.
                                 Reach out and our team will get back to you as soon as possible.
@@ -44,7 +44,7 @@
                                     <div class="d-flex flex-column">
                                         <span class="fs-4 font-1 fw-bold">
                                             Address</span>
-                                        <span class="accent-color">99 Roving St., Big City, PKU 23456</span>
+                                        <span class="accent-color">Burj Khalifa Boulevard, Downtown Dubai, Dubai AE</span>
                                     </div>
                                 </div>
                                 <div class="d-flex flex-row gap-3 align-items-center">
@@ -53,7 +53,7 @@
                                     </div>
                                     <div class="d-flex flex-column">
                                         <span class="fs-4 font-1 fw-bold">Call Us</span>
-                                        <span class="accent-color">+123-234-1234</span>
+                                        <span class="accent-color">+92 312-3850846</span>
                                     </div>
                                 </div>
                                 <div class="d-flex flex-row gap-3 align-items-center">
@@ -62,7 +62,7 @@
                                     </div>
                                     <div class="d-flex flex-column">
                                         <span class="fs-4 font-1 fw-bold">Email</span>
-                                        <span class="accent-color">hello@awesomesite.com</span>
+                                        <span class="accent-color">contact@thenashcast.com</span>
                                     </div>
                                 </div>
                             </div>
@@ -142,46 +142,46 @@
             <iframe loading="lazy" class="maps" src="https://maps.google.com/maps?q=London%20Eye%2C%20London%2C%20United%20Kingdom&amp;t=m&amp;z=14&amp;output=embed&amp;iwloc=near" title="London Eye, London, United Kingdom" aria-label="London Eye, London, United Kingdom"></iframe>
         </div>
 
-        <!-- Subscribe -->
-        <section class="section">
-            <div class="r-container">
-                <div class="section position-relative rounded-4 overflow-hidden bg-attach-fixed" style="background-image: url(image/image-1920x900-3.jpg);">
-                    <div class="image-overlay-2"></div>
-                    <div class="row row-cols-1 row-cols-lg-2 position-relative" style="z-index: 2;">
-                        <div class="col  mb-3">
-                            <h3 class="font-1 fw-bold lh-1"><span class="accent-color">Subscribe</span> To The NashCast</h3>
-                            <p class="text-gray">
-                                Stay close to the conversations shaping how we think about work, leadership, and growth. Subscribe on YouTube to get every new episode and highlight.
-                            </p>
+    <!-- Subscribe -->
+    <section class="section">
+        <div class="r-container">
+            <div class="section position-relative rounded-4 overflow-hidden bg-attach-fixed" style="background-image: url(image/image-1920x900-3.jpg);">
+                <div class="image-overlay-2"></div>
+                <div class="row row-cols-1 row-cols-lg-2 position-relative" style="z-index: 2;">
+                    <div class="col  mb-3">
+                        <h3 class="font-1 fw-bold lh-1">Subscribe To<br><span class="accent-color">The</span> <span class="logo-blue">Nash</span><span class="logo-green">Cast</span></h3>
+                        <p class="text-gray">
+                            Subscribe on YouTube for full episodes, exclusive clips, and behind-the-scenes content that keeps you close to the leaders, dreamers, and doers shaping the future of business, technology, and leadership.
+                        </p>
+                    </div>
+                    <div class="col  mb-3">
+                        <div class="d-flex h-100 flex-column justify-content-center">
+                            <h5 class="font-1 fw-bold">Newsletter</h5>
+                            <form class="w-100 form needs-validation">
+                                <input type="text" name="action" value="subscribe" hidden="">
+                                <div class="input-group mb-3">
+                                    <input type="email" name="email" class="form-control py-3 px-4 form-white" placeholder="Your Email" aria-label="Recipient's username" aria-describedby="button-addon2" required="" fdprocessedid="q5s7agg">
+                                    <button class="btn button btn_submit-subscribe font-1  fw-bold px-5" type="submit" id="button-addon2" fdprocessedid="tmg8">Subscribe</button>
+                                </div>
+                            </form>
                         </div>
-                        <div class="col  mb-3">
-                            <div class="d-flex h-100 flex-column justify-content-center">
-                                <h5 class="font-1 fw-bold">Newsletter</h5>
-                                <form class="w-100 form needs-validation">
-                                    <input type="text" name="action" value="subscribe" hidden="">
-                                    <div class="input-group mb-3">
-                                        <input type="email" name="email" class="form-control py-3 px-4 form-white" placeholder="Your Email" aria-label="Recipient's username" aria-describedby="button-addon2" required="" fdprocessedid="oau5sr">
-                                        <button class="btn button btn_submit-subscribe font-1  fw-bold px-5" type="submit" id="button-addon2" fdprocessedid="6hbv2">Subscribe</button>
+                        <div class="toast-container position-fixed bottom-0 end-0 p-3">
+                            <div id="liveToast" class="toast success_msg_subscribe bg-dark-transparent text-white" role="alert" aria-live="assertive" aria-atomic="true">
+                                <div class="d-flex">
+                                    <div class="toast-body">
+                                        Your Subscribe Send Successfully!.
                                     </div>
-                                </form>
-                            </div>
-                            <div class="toast-container position-fixed bottom-0 end-0 p-3">
-                                <div id="liveToast" class="toast success_msg_subscribe bg-dark-transparent text-white" role="alert" aria-live="assertive" aria-atomic="true">
-                                    <div class="d-flex">
-                                        <div class="toast-body">
-                                            Your Subscribe Send Successfully!.
-                                        </div>
-                                        <button type="button" class="btn me-2 m-auto text-white" data-bs-dismiss="toast" aria-label="Close">
-                                            <i class="fa-solid fa-xmark"></i>
-                                        </button>
-                                    </div>
+                                    <button type="button" class="btn me-2 m-auto text-white" data-bs-dismiss="toast" aria-label="Close">
+                                        <i class="fa-solid fa-xmark"></i>
+                                    </button>
                                 </div>
                             </div>
                         </div>
                     </div>
                 </div>
             </div>
-        </section>
+        </div>
+    </section>
     </main>
     <!-- FOOTER -->
     <?php
