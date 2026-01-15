@@ -2,6 +2,16 @@
 <?php
 $page = 'home';
 include 'layouts/header.php';
+
+$env = parse_ini_file(__DIR__ . "/.env");
+
+if (!$env) {
+    die("Unable to load .env file");
+}
+$apiKey = $env['Youtube_API'] ?? null;
+if (!$apiKey) {
+    die("Youtube_API not found. ");
+}
 ?>
 <!-- END HEADER -->
 
@@ -24,9 +34,9 @@ include 'layouts/header.php';
                         <div class="d-flex flex-lg-row flex-column gap-lg-5 gap-4">
                             <a href="about-us" class="btn button font-1 ls-2">ABOUT THE NASHCAST</a>
                             <div class="d-flex flex-row gap-3 align-items-center">
-                                <button type="button" class="btn request-loader" data-bs-toggle="modal" data-bs-target="#exampleModal" fdprocessedid="0j5hba">
+                                <a href="https://www.youtube.com/playlist?list=PLn8IsWI_eoZkUU_xUC3rJZuutrVFJiTYA" type="button" class="btn request-loader">
                                     <i class="fa-solid fa-play ms-1"></i>
-                                </button>
+                                </a>
                                 <span class="font-1 ls-2 fw-bold logo-green">START WATCHING</span>
                             </div>
                         </div>
@@ -55,20 +65,20 @@ include 'layouts/header.php';
             <div class="row row-cols-1 row-cols-lg-4 ps-5 ps-lg-0">
                 <div class="col mb-4 mb-lg-0">
                     <div class="d-flex flex-column">
-                        <h2 class="font-1 fw-bold m-0">20<sup>M</sup></h2>
+                        <h2 class="font-1 fw-bold m-0">113.3K</h2>
                         <p class="fs-5 m-0">Our Subscribers</p>
                     </div>
                 </div>
                 <div class="col mb-4 mb-lg-0">
                     <div class="d-flex flex-column">
-                        <h2 class="font-1 fw-bold m-0">150<sup>+</sup></h2>
+                        <h2 class="font-1 fw-bold m-0">41<sup>+</sup></h2>
                         <p class="fs-5 m-0">Podcast Episodes</p>
                     </div>
                 </div>
                 <div class="col mb-4 mb-lg-0">
                     <div class="d-flex flex-column">
-                        <h2 class="font-1 fw-bold m-0">83<sup>K</sup></h2>
-                        <p class="fs-5 m-0">Our Followers</p>
+                        <h2 class="font-1 fw-bold m-0">592.3K</h2>
+                        <p class="fs-5 m-0">Our Viewers</p>
                     </div>
                 </div>
             </div>
@@ -77,16 +87,12 @@ include 'layouts/header.php';
 
     <!-- Most Favorite Podcast -->
     <?php
-    $apiKey = "AIzaSyArxLswISKlsXuLpvHiCnpXKWa9oAV7TUM";
-
     $videos = [
         "https://www.youtube.com/watch?v=GewewoxPm9w&list=PLn8IsWI_eoZkUU_xUC3rJZuutrVFJiTYA",
         "https://www.youtube.com/watch?v=8XAeVOpLsA0&list=PLn8IsWI_eoZkUU_xUC3rJZuutrVFJiTYA&index=2",
         "https://www.youtube.com/watch?v=d0rY7La482E&list=PLn8IsWI_eoZkUU_xUC3rJZuutrVFJiTYA&index=3",
     ];
-
-
-    function getYoutubeData($youtubeUrl, $apiKey)
+    function getYoutubeData($youtubeUrl, $apiKey,)
     {
         // Extract video ID from any YouTube URL
         parse_str(parse_url($youtubeUrl, PHP_URL_QUERY), $vars);
@@ -123,7 +129,6 @@ include 'layouts/header.php';
             "embed"     => "https://www.youtube.com/embed/$videoId?autoplay=1"
         ];
     }
-
     ?>
     <section class="section">
         <div class="r-container">
@@ -415,233 +420,66 @@ include 'layouts/header.php';
     </section>
 
     <!-- Our Podcast -->
+
+    <?php
+    $recentPodcasts = [
+        "https://www.youtube.com/watch?v=GewewoxPm9w&list=PLn8IsWI_eoZkUU_xUC3rJZuutrVFJiTYA",
+        "https://www.youtube.com/watch?v=8XAeVOpLsA0&list=PLn8IsWI_eoZkUU_xUC3rJZuutrVFJiTYA&index=2",
+        "https://www.youtube.com/watch?v=d0rY7La482E&list=PLn8IsWI_eoZkUU_xUC3rJZuutrVFJiTYA&index=3",
+        "https://youtu.be/qEOx9O1wCHE?si=LoGk6OKH56I9SIrf",
+        "https://youtu.be/Tdmwo1m-LqM?si=tS6QjhEctIyKVaWa",
+        "https://youtu.be/JI9rufu94pM?si=PfwhEKySNDuu3u25",
+    ];
+    ?>
     <section class="section position-relative">
         <div class="texture-overlay"></div>
         <div class="r-container position-relative" style="z-index: 2;">
             <div class="d-flex flex-column text-center gap-3">
-                <span class="fs-5">Our Podcast</span>
+                <span class="fs-5">Our Podcasts</span>
                 <h3 class="font-1 fw-bold lh-1"><span class="accent-color">Recent</span> Episodes</h3>
                 <div class="row row-cols-1 row-cols-lg-3">
-                    <div class="col mb-4">
-                        <div class="d-flex flex-column gap-3 h-100">
-                            <div class="position-relative h-100">
-                                <div class="overlay rounded-3"></div>
-                                <div class="position-absolute start-0 top-0 w-100 h-100" style="z-index: 2;">
-                                    <div class="d-flex justify-content-center align-items-center h-100">
-                                        <button type="button" class="btn request-loader" data-bs-toggle="modal" data-bs-target="#e119" fdprocessedid="ny0f1o">
-                                            <i class="fa-solid fa-play ms-1"></i>
-                                        </button>
-                                    </div>
-                                </div>
-                                <img src="image/image-600x500-1.jpg" alt="image" class="img-fluid rounded-3">
-                                <div class="position-absolute bottom-0 start-0 w-100 d-flex flex-column px-4 py-3">
-                                    <h5 class="font-1 fw-bold lh-1">Jane Foster: How to Live a Life Full of Comedy |
-                                        E119
-                                    </h5>
-                                    <div class="d-flex flex-row justify-content-center gap-5">
-                                        <div class="d-flex flex-row align-items-center gap-2">
-                                            <i class="fa-regular fa-clock accent-color"></i>
-                                            1hr 24m
-                                        </div>
-                                        <div class="d-flex flex-row align-items-center gap-2">
-                                            <i class="fa-solid fa-calendar-days accent-color"></i>
-                                            13 October 2023
+                    <?php foreach ($recentPodcasts as $index => $url):
+                        $video = getYoutubeData($url, $apiKey);
+                        if (!$video) continue;
+                        $modalId = "modal-" . ($index + 1);
+                    ?>
+                        <div class="col mb-4">
+                            <div class="d-flex flex-column gap-3 h-100">
+                                <div class="position-relative h-100">
+                                    <div class="overlay rounded-3"></div>
+                                    <div class="position-absolute start-0 top-0 w-100 h-100" style="z-index: 2;">
+                                        <div class="d-flex justify-content-center align-items-center h-100">
+                                            <button type="button" class="btn request-loader" data-bs-toggle="modal" data-bs-target="#e119" fdprocessedid="ny0f1o">
+                                                <i class="fa-solid fa-play ms-1"></i>
+                                            </button>
                                         </div>
                                     </div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="modal fade bg-overlay" id="e119" tabindex="-1" aria-hidden="true">
-                            <div class="modal-dialog modal-dialog-centered modal-lg">
-                                <div class="modal-content bg-dark-color">
-                                    <iframe class="ifr-video" src="https://www.youtube.com/embed/FK2RaJ1EfA8?autoplay=1"></iframe>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col mb-4">
-                        <div class="d-flex flex-column gap-3 h-100">
-                            <div class="position-relative h-100">
-                                <div class="overlay rounded-3"></div>
-                                <div class="position-absolute start-0 top-0 w-100 h-100" style="z-index: 2;">
-                                    <div class="d-flex justify-content-center align-items-center h-100">
-                                        <button type="button" class="btn request-loader" data-bs-toggle="modal" data-bs-target="#e118" fdprocessedid="ipki0i">
-                                            <i class="fa-solid fa-play ms-1"></i>
-                                        </button>
-                                    </div>
-                                </div>
-                                <img src="image/image-600x500-2.jpg" alt="image" class="img-fluid rounded-3">
-                                <div class="position-absolute bottom-0 start-0 w-100 d-flex flex-column px-4 py-3">
-                                    <h5 class="font-1 fw-bold lh-1">Casey Stone: I Like The Way I Compose Songs |
-                                        E118
-                                    </h5>
-                                    <div class="d-flex flex-row justify-content-center gap-5">
-                                        <div class="d-flex flex-row align-items-center gap-2">
-                                            <i class="fa-regular fa-clock accent-color"></i>
-                                            1hr 24m
-                                        </div>
-                                        <div class="d-flex flex-row align-items-center gap-2">
-                                            <i class="fa-solid fa-calendar-days accent-color"></i>
-                                            13 October 2023
+                                    <img src="<?= $video['thumbnail'] ?>" class="w-100 h-100 object-fit-cover rounded-3 truncate" alt="<?= htmlspecialchars($video['title']) ?>">
+                                    <div class="position-absolute bottom-0 start-0 w-100 d-flex flex-column px-4 py-3">
+                                        <h5 class="font-1 fw-bold lh-1"><?= $video['title'] ?>
+                                        </h5>
+                                        <div class="d-flex flex-row justify-content-center gap-5">
+                                            <div class="d-flex flex-row align-items-center gap-2">
+                                                <i class="fa-regular fa-clock accent-color"></i>
+                                                <?= $video['duration'] ?>
+                                            </div>
+                                            <div class="d-flex flex-row align-items-center gap-2">
+                                                <i class="fa-solid fa-calendar-days accent-color"></i>
+                                                <?= $video['date'] ?>
+                                            </div>
                                         </div>
                                     </div>
                                 </div>
                             </div>
-                        </div>
-                        <div class="modal fade bg-overlay" id="e118" tabindex="-1" aria-hidden="true">
-                            <div class="modal-dialog modal-dialog-centered modal-lg">
-                                <div class="modal-content bg-dark-color">
-                                    <iframe class="ifr-video" src="https://www.youtube.com/embed/FK2RaJ1EfA8?autoplay=1"></iframe>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col mb-4">
-                        <div class="d-flex flex-column gap-3 h-100">
-                            <div class="position-relative h-100">
-                                <div class="overlay rounded-3"></div>
-                                <div class="position-absolute start-0 top-0 w-100 h-100" style="z-index: 2;">
-                                    <div class="d-flex justify-content-center align-items-center h-100">
-                                        <button type="button" class="btn request-loader" data-bs-toggle="modal" data-bs-target="#e117" fdprocessedid="67lz5n">
-                                            <i class="fa-solid fa-play ms-1"></i>
-                                        </button>
-                                    </div>
-                                </div>
-                                <img src="image/image-600x500-3.jpg" alt="image" class="img-fluid rounded-3">
-                                <div class="position-absolute bottom-0 start-0 w-100 d-flex flex-column px-4 py-3">
-                                    <h5 class="font-1 fw-bold lh-1">Hanna Adams: What if we Live Without Music? |
-                                        E117
-                                    </h5>
-                                    <div class="d-flex flex-row justify-content-center gap-5">
-                                        <div class="d-flex flex-row align-items-center gap-2">
-                                            <i class="fa-regular fa-clock accent-color"></i>
-                                            1hr 24m
-                                        </div>
-                                        <div class="d-flex flex-row align-items-center gap-2">
-                                            <i class="fa-solid fa-calendar-days accent-color"></i>
-                                            13 October 2023
-                                        </div>
+                            <div class="modal fade bg-overlay" id="e119" tabindex="-1" aria-hidden="true">
+                                <div class="modal-dialog modal-dialog-centered modal-lg">
+                                    <div class="modal-content bg-dark-color">
+                                        <iframe class="ifr-video" src="<?= $video['embed'] ?>"></iframe>
                                     </div>
                                 </div>
                             </div>
                         </div>
-                        <div class="modal fade bg-overlay" id="e117" tabindex="-1" aria-hidden="true">
-                            <div class="modal-dialog modal-dialog-centered modal-lg">
-                                <div class="modal-content bg-dark-color">
-                                    <iframe class="ifr-video" src="https://www.youtube.com/embed/FK2RaJ1EfA8?autoplay=1"></iframe>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col mb-4">
-                        <div class="d-flex flex-column gap-3 h-100">
-                            <div class="position-relative h-100">
-                                <div class="overlay rounded-3"></div>
-                                <div class="position-absolute start-0 top-0 w-100 h-100" style="z-index: 2;">
-                                    <div class="d-flex justify-content-center align-items-center h-100">
-                                        <button type="button" class="btn request-loader" data-bs-toggle="modal" data-bs-target="#e116" fdprocessedid="cwczv">
-                                            <i class="fa-solid fa-play ms-1"></i>
-                                        </button>
-                                    </div>
-                                </div>
-                                <img src="image/image-600x500-4.jpg" alt="image" class="img-fluid rounded-3">
-                                <div class="position-absolute bottom-0 start-0 w-100 d-flex flex-column px-4 py-3">
-                                    <h5 class="font-1 fw-bold lh-1">Exclusive: Full of Fun and Emotion | E116
-                                    </h5>
-                                    <div class="d-flex flex-row justify-content-center gap-5">
-                                        <div class="d-flex flex-row align-items-center gap-2">
-                                            <i class="fa-regular fa-clock accent-color"></i>
-                                            1hr 24m
-                                        </div>
-                                        <div class="d-flex flex-row align-items-center gap-2">
-                                            <i class="fa-solid fa-calendar-days accent-color"></i>
-                                            13 October 2023
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="modal fade bg-overlay" id="e116" tabindex="-1" aria-hidden="true">
-                            <div class="modal-dialog modal-dialog-centered modal-lg">
-                                <div class="modal-content bg-dark-color">
-                                    <iframe class="ifr-video" src="https://www.youtube.com/embed/FK2RaJ1EfA8?autoplay=1"></iframe>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col mb-4">
-                        <div class="d-flex flex-column gap-3 h-100">
-                            <div class="position-relative h-100">
-                                <div class="overlay rounded-3"></div>
-                                <div class="position-absolute start-0 top-0 w-100 h-100" style="z-index: 2;">
-                                    <div class="d-flex justify-content-center align-items-center h-100">
-                                        <button type="button" class="btn request-loader" data-bs-toggle="modal" data-bs-target="#e115" fdprocessedid="fciuis">
-                                            <i class="fa-solid fa-play ms-1"></i>
-                                        </button>
-                                    </div>
-                                </div>
-                                <img src="image/image-600x500-5.jpg" alt="image" class="img-fluid rounded-3">
-                                <div class="position-absolute bottom-0 start-0 w-100 d-flex flex-column px-4 py-3">
-                                    <h5 class="font-1 fw-bold lh-1">Exclusive: Know More About Our Podcast Team|
-                                        E115
-                                    </h5>
-                                    <div class="d-flex flex-row justify-content-center gap-5">
-                                        <div class="d-flex flex-row align-items-center gap-2">
-                                            <i class="fa-regular fa-clock accent-color"></i>
-                                            1hr 24m
-                                        </div>
-                                        <div class="d-flex flex-row align-items-center gap-2">
-                                            <i class="fa-solid fa-calendar-days accent-color"></i>
-                                            13 October 2023
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="modal fade bg-overlay" id="e115" tabindex="-1" aria-hidden="true">
-                            <div class="modal-dialog modal-dialog-centered modal-lg">
-                                <div class="modal-content bg-dark-color">
-                                    <iframe class="ifr-video" src="https://www.youtube.com/embed/FK2RaJ1EfA8?autoplay=1"></iframe>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col mb-4">
-                        <div class="d-flex flex-column gap-3 h-100">
-                            <div class="position-relative h-100">
-                                <div class="overlay rounded-3"></div>
-                                <div class="position-absolute start-0 top-0 w-100 h-100" style="z-index: 2;">
-                                    <div class="d-flex justify-content-center align-items-center h-100">
-                                        <button type="button" class="btn request-loader" data-bs-toggle="modal" data-bs-target="#e114" fdprocessedid="r7z65s">
-                                            <i class="fa-solid fa-play ms-1"></i>
-                                        </button>
-                                    </div>
-                                </div>
-                                <img src="image/image-600x500-6.jpg" alt="image" class="img-fluid rounded-3">
-                                <div class="position-absolute bottom-0 start-0 w-100 d-flex flex-column px-4 py-3">
-                                    <h5 class="font-1 fw-bold lh-1">Talk About Today's Music Community | E114
-                                    </h5>
-                                    <div class="d-flex flex-row justify-content-center gap-5">
-                                        <div class="d-flex flex-row align-items-center gap-2">
-                                            <i class="fa-regular fa-clock accent-color"></i>
-                                            1hr 24m
-                                        </div>
-                                        <div class="d-flex flex-row align-items-center gap-2">
-                                            <i class="fa-solid fa-calendar-days accent-color"></i>
-                                            13 October 2023
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="modal fade bg-overlay" id="e114" tabindex="-1" aria-hidden="true">
-                            <div class="modal-dialog modal-dialog-centered modal-lg">
-                                <div class="modal-content bg-dark-color">
-                                    <iframe class="ifr-video" src="https://www.youtube.com/embed/FK2RaJ1EfA8?autoplay=1"></iframe>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
+                    <?php endforeach; ?>
                 </div>
                 <div class="d-flex justify-content-center">
                     <a href="/goodsound/podcast" class="btn button font-1 ls-2">VIEW ALL PODCASTS
