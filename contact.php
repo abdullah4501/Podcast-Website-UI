@@ -37,17 +37,17 @@ include 'layouts/header.php';
                         </p>
                         <div class="d-flex flex-column gap-3">
                             <div class="d-flex flex-row gap-3 align-items-center">
-                                <div class="rounded-circle bg-accent-color d-flex align-items-center justify-content-center" style="width: 3rem; height: 3rem;">
+                                <div class="rounded-circle bg-accent-color d-flex align-items-center justify-content-center icon-circle">
                                     <span class="text-white fs-3"><i class="fa-solid fa-location-dot"></i></span>
                                 </div>
                                 <div class="d-flex flex-column">
                                     <span class="fs-4 font-1 fw-bold">
                                         Address</span>
-                                    <span class="accent-color">Burj Khalifa Boulevard, Downtown Dubai, Dubai AE</span>
+                                    <span class="accent-color">Downtown Dubai, Dubai AE</span>
                                 </div>
                             </div>
                             <div class="d-flex flex-row gap-3 align-items-center">
-                                <div class="rounded-circle bg-accent-color d-flex align-items-center justify-content-center" style="width: 3rem; height: 3rem;">
+                                <div class="rounded-circle bg-accent-color d-flex align-items-center justify-content-center icon-circle">
                                     <span class="text-white fs-3"><i class="fa-solid fa-phone"></i></span>
                                 </div>
                                 <div class="d-flex flex-column">
@@ -56,7 +56,7 @@ include 'layouts/header.php';
                                 </div>
                             </div>
                             <div class="d-flex flex-row gap-3 align-items-center">
-                                <div class="rounded-circle bg-accent-color d-flex align-items-center justify-content-center" style="width: 3rem; height: 3rem;">
+                                <div class="rounded-circle bg-accent-color d-flex align-items-center justify-content-center icon-circle">
                                     <span class="text-white fs-3"><i class="fa-solid fa-envelope"></i></span>
                                 </div>
                                 <div class="d-flex flex-column">

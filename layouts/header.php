@@ -48,6 +48,9 @@ $baseUrl  = $basePath === '' ? '/' : $basePath . '/';
                                 <a class="nav-link <?= ($page == 'home') ? 'active' : ''; ?>" aria-current="page" href="home">Home</a>
                             </li>
                             <li class="nav-item">
+                                <a class="nav-link <?= ($page == 'about') ? 'active' : ''; ?>"  href="about-us">About</a>
+                            </li>
+                            <li class="nav-item">
                                 <a class="nav-link <?= ($page == 'podcast') ? 'active' : ''; ?>" href="podcast">Podcasts</a>
                             </li>
                             <li class="nav-item">

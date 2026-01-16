@@ -9,9 +9,9 @@ if (!$env) {
     die("Unable to load .env file");
 }
 $apiKey = $env['Youtube_API'] ?? null;
-if (!$apiKey) {
-    die("Youtube_API not found. ");
-}
+$playlistId  = $env['Play_List_ID'] ?? null;
+
+
 ?>
 <!-- END HEADER -->
 
@@ -21,13 +21,13 @@ if (!$apiKey) {
     <section class="section position-relative" style="background-image: url(image/image-1920x900-1.jpg); height: 90vh;">
         <div class="image-overlay"></div>
         <div class="r-container h-100 position-relative" style="z-index: 2;">
-            <div class="row row-cols-1 row-cols-lg-2 w-100 h-100">
-                <div class="col h-100 p-lg-0">
+            <div class="row w-100 h-100">
+                <div class="col-md-8 col-12 h-100 p-lg-0">
                     <div class="d-flex flex-column gap-3 justify-content-center h-100">
-                        <h1 class="font-1 fw-bold lh-1">
+                        <h1 class="fw-bold lh-1">
                             Powerful Conversations To Help You <span class="logo-blue">Think,</span> <span class="accent-color">Lead</span> and <span class="logo-green">Succeed</span>
                         </h1>
-                        <p class="text-gray fs-5">
+                        <p class="text-gray main-text-content">
                             Welcome to The NashCast, a YouTube podcast hosted by Adeel Shaikh & Nabeel Shaikh, and built for professionals, founders, and lifelong learners who want more than surface-level content.
                             Learn how entrepreneurs, industry experts, and changemakers make decisions, overcome challenges, and build meaningful, sustainable impact.
                         </p>
@@ -43,23 +43,10 @@ if (!$apiKey) {
                 </div>
             </div>
         </div>
-        <!-- Modal -->
-        <div class="modal fade bg-overlay" id="exampleModal" tabindex="-1" aria-hidden="true">
-            <div class="modal-dialog modal-dialog-centered modal-lg">
-                <div class="modal-content bg-dark-color">
-                    <iframe
-                        class="ifr-video"
-                        src="https://www.youtube.com/embed/videoseries?list=PLn8IsWI_eoZkUU_xUC3rJZuutrVFJiTYA"
-                        allowfullscreen>
-                    </iframe>
-
-                </div>
-            </div>
-        </div>
     </section>
 
-    <div class="position-relative py-5 px-3" style="margin-top: -80px;">
-        <div class="position-absolute top-0 start-0 w-75 h-100 bg-accent-color rounded-end-3"></div>
+    <div class="position-relative py-5 px-3 display-numbers">
+        <div class="position-absolute w-75 h-100 bg-accent-color rounded-end-3 display-numbers-bg"></div>
         <div class="r-container position-relative" style="z-index: 2;">
             <div class="row row-cols-1 row-cols-lg-4 ps-5 ps-lg-0">
                 <div class="col mb-4 mb-lg-0">
@@ -77,7 +64,7 @@ if (!$apiKey) {
                 <div class="col mb-4 mb-lg-0">
                     <div class="d-flex flex-column">
                         <h2 class="font-1 fw-bold m-0">592.3K</h2>
-                        <p class="fs-5 m-0">Our Viewers</p>
+                        <p class="fs-5 m-0">Our Views</p>
                     </div>
                 </div>
             </div>
@@ -86,47 +73,94 @@ if (!$apiKey) {
 
     <!-- Most Favorite Podcast -->
     <?php
-    $videos = [
-        "https://www.youtube.com/watch?v=GewewoxPm9w&list=PLn8IsWI_eoZkUU_xUC3rJZuutrVFJiTYA",
-        "https://www.youtube.com/watch?v=8XAeVOpLsA0&list=PLn8IsWI_eoZkUU_xUC3rJZuutrVFJiTYA&index=2",
-        "https://www.youtube.com/watch?v=d0rY7La482E&list=PLn8IsWI_eoZkUU_xUC3rJZuutrVFJiTYA&index=3",
-    ];
-    function getYoutubeData($youtubeUrl, $apiKey,)
-    {
-        // Extract video ID from any YouTube URL
-        parse_str(parse_url($youtubeUrl, PHP_URL_QUERY), $vars);
 
-        if (!empty($vars['v'])) {
-            $videoId = $vars['v'];
-        } elseif (preg_match('/youtu\.be\/([^\?]+)/', $youtubeUrl, $matches)) {
-            $videoId = $matches[1];
-        } elseif (preg_match('/embed\/([^\?]+)/', $youtubeUrl, $matches)) {
-            $videoId = $matches[1];
-        } else {
-            return null;
+    function getPlaylistVideoIds($playlistId, $apiKey, $limit = 3, $sortBy = 'date')
+    {
+        $url = "https://www.googleapis.com/youtube/v3/playlistItems?part=contentDetails&maxResults=50&playlistId=$playlistId&key=$apiKey";
+
+        $ch = curl_init($url);
+        curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
+        curl_setopt($ch, CURLOPT_SSL_VERIFYPEER, false);
+        $response = curl_exec($ch);
+        curl_close($ch);
+
+        $data = json_decode($response, true);
+
+        $videoIds = [];
+        if (isset($data['items']) && is_array($data['items'])) {
+            foreach ($data['items'] as $item) {
+                if (isset($item['contentDetails']['videoId'])) {
+                    $videoIds[] = $item['contentDetails']['videoId'];
+                }
+            }
         }
 
-        // Call YouTube API
-        $apiUrl = "https://www.googleapis.com/youtube/v3/videos?part=snippet,contentDetails&id=$videoId&key=$apiKey";
-        $json = file_get_contents($apiUrl);
-        $data = json_decode($json, true);
+        return $videoIds;
+    }
 
-        if (empty($data['items'][0])) return null;
+    function getVideosFromIds(array $videoIds, $apiKey, $sortBy = 'date')
+    {
+        if (empty($videoIds)) return [];
 
-        $item = $data['items'][0];
+        $ids = implode(',', $videoIds);
+        $url = "https://www.googleapis.com/youtube/v3/videos?part=snippet,contentDetails,statistics&id=$ids&key=$apiKey";
 
-        // Convert ISO duration
-        $interval = new DateInterval($item['contentDetails']['duration']);
-        $duration = ($interval->h ? $interval->h . "hr " : "") . $interval->i . "m";
+        $ch = curl_init($url);
+        curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
+        $response = curl_exec($ch);
+        curl_close($ch);
+        $data = json_decode($response, true);
 
-        return [
-            "id"        => $videoId,
-            "title"     => $item['snippet']['title'],
-            "date"      => date("d F Y", strtotime($item['snippet']['publishedAt'])),
-            "thumbnail" => $item['snippet']['thumbnails']['high']['url'],
-            "duration"  => $duration,
-            "embed"     => "https://www.youtube.com/embed/$videoId?autoplay=1"
-        ];
+        $videos = [];
+        if (isset($data['items']) && is_array($data['items'])) {
+            foreach ($data['items'] as $item) {
+                $interval = new DateInterval($item['contentDetails']['duration']);
+                $videos[] = [
+                    "id"        => $item['id'],
+                    "title"     => $item['snippet']['title'],
+                    "date"      => strtotime($item['snippet']['publishedAt']),
+                    "date_formatted" => date("d F Y", strtotime($item['snippet']['publishedAt'])),
+                    "thumbnail" => $item['snippet']['thumbnails']['high']['url'],
+                    "duration"  => ($interval->h ? $interval->h . "hr " : "") . $interval->i . "m",
+                    "embed"     => "https://www.youtube.com/watch?v=" . $item['id'],
+                    "views"     => $item['statistics']['viewCount'] ?? 0
+                ];
+            }
+        }
+
+        if ($sortBy === 'views') {
+            usort($videos, function ($a, $b) {
+                return $b['views'] - $a['views'];
+            });
+        } elseif ($sortBy === 'date') {
+            usort($videos, function ($a, $b) {
+                return $b['date'] - $a['date'];
+            });
+        }
+
+        return $videos;
+    }
+
+    $showVideosSection = true;
+    if (!$apiKey || !$playlistId) {
+        $showVideosSection = false;
+        $mostViewedVideos = [];
+        $latestVideos = [];
+    }
+
+    if ($showVideosSection) {
+        $videoIds = getPlaylistVideoIds($playlistId, $apiKey, 50);
+
+        // Get most viewed videos (top 3)
+        $allVideos = getVideosFromIds($videoIds, $apiKey, 'views');
+        $mostViewedVideos = array_slice($allVideos, 0, 3);
+
+        // Get latest videos (top 6 by date)
+        $allVideosByDate = getVideosFromIds($videoIds, $apiKey, 'date');
+        $latestVideos = array_slice($allVideosByDate, 0, 6);
+    } else {
+        $mostViewedVideos = [];
+        $latestVideos = [];
     }
     ?>
     <section class="section">
@@ -135,47 +169,38 @@ if (!$apiKey) {
                 <h3 class="font-1 fw-bold">Most <span class="accent-color">Impactful</span> Conversations</h3>
                 <p class="mx-auto text-gray" style="max-width: 768px;">Deep-dive episodes from The NashCast featuring entrepreneurs, operators, and changemakers across business, finance, technology, leadership, and personal growth, curated to help you think bigger and execute better.</p>
                 <div class="row row-cols-1 row-cols-lg-3 w-100 text-start">
-                    <?php foreach ($videos as $index => $url):
-                        $video = getYoutubeData($url, $apiKey);
-                        if (!$video) continue;
-                        $modalId = "modal-" . ($index + 1);
-                    ?>
-
-
-                        <div class="col mb-3">
-                            <div class="d-flex flex-column gap-3 h-100">
-                                <div class="position-relative ratio ratio-16x9">
-                                    <div class="image-overlay-2"></div>
-                                    <div class="position-absolute start-0 top-0 w-100 h-100" style="z-index: 2;">
-                                        <div class="d-flex justify-content-center align-items-center h-100">
-                                            <button type="button" class="btn request-loader" data-bs-toggle="modal" data-bs-target="#<?= $modalId ?>">
-                                                <i class="fa-solid fa-play ms-1"></i>
-                                            </button>
+                    <?php if ($showVideosSection && !empty($mostViewedVideos)): ?>
+                        <?php foreach ($mostViewedVideos as $index => $video):
+                            $modalId = "modal-" . ($index + 1);
+                        ?>
+                            <div class="col mb-3">
+                                <div class="d-flex flex-column gap-3 h-100">
+                                    <a href="<?= $video['embed'] ?>" target="_blank">
+                                        <div class="position-relative ratio ratio-16x9">
+                                            <div class="image-overlay-2"></div>
+                                            <div class="position-absolute start-0 top-0 w-100 h-100" style="z-index: 2;">
+                                                <div class="d-flex justify-content-center align-items-center h-100">
+                                                    <button type="button" class="btn request-loader" data-bs-toggle="modal" data-bs-target="#<?= $modalId ?>">
+                                                        <i class="fa-solid fa-play ms-1"></i>
+                                                    </button>
+                                                </div>
+                                            </div>
+                                            <img src="<?= $video['thumbnail'] ?>" class="w-100 h-100 object-fit-cover rounded-3" alt="<?= htmlspecialchars($video['title']) ?>">
                                         </div>
+                                    </a>
+
+
+                                    <div class="d-flex flex-row gap-5">
+                                        <div><i class="fa-regular fa-clock accent-color"></i> <?= $video['duration'] ?></div>
+                                        <div><i class="fa-solid fa-calendar-days accent-color"></i> <?= $video['date_formatted'] ?></div>
                                     </div>
-                                    <img src="<?= $video['thumbnail'] ?>" class="w-100 h-100 object-fit-cover rounded-3" alt="<?= htmlspecialchars($video['title']) ?>">
-                                </div>
 
-
-                                <div class="d-flex flex-row gap-5">
-                                    <div><i class="fa-regular fa-clock accent-color"></i> <?= $video['duration'] ?></div>
-                                    <div><i class="fa-solid fa-calendar-days accent-color"></i> <?= $video['date'] ?></div>
-                                </div>
-
-                                <h5 class="font-1 fw-bold lh-1 truncate"><?= $video['title'] ?></h5>
-                            </div>
-
-                            <div class="modal fade bg-overlay" id="<?= $modalId ?>" tabindex="-1">
-                                <div class="modal-dialog modal-dialog-centered modal-lg">
-                                    <div class="modal-content bg-dark-color">
-                                        <iframe class="ifr-video" src="<?= $video['embed'] ?>" allowfullscreen></iframe>
-                                    </div>
+                                    <h5 class="font-1 fw-bold lh-1 truncate"><?= $video['title'] ?></h5>
                                 </div>
                             </div>
-                        </div>
-                    <?php endforeach; ?>
+                        <?php endforeach; ?>
+                    <?php endif; ?>
                 </div>
-
             </div>
         </div>
     </section>
@@ -208,7 +233,7 @@ if (!$apiKey) {
                         </div>
                     </div>
                 </div>
-                <div class="col  mb-3">
+                <div class="col mb-3">
                     <div class="position-relative">
                         <div class="position-absolute top-0 end-0 bg-accent-color px-5 py-4 rounded-3 shadow" style="z-index: 3; margin-top: -50px;">
                             <div class="d-flex flex-column text-center">
@@ -225,16 +250,22 @@ if (!$apiKey) {
                                     </button>
                                 </div>
                             </div>
-                            <img src="image/image-600x700-1.jpg" alt="image" class="img-fluid w-100 rounded-4">
+                            <img src="image/about-thumbnail.jpg" alt="image" class="img-fluid w-100 rounded-4">
                         </div>
                     </div>
                     <div class="modal fade bg-overlay" id="modal-about" tabindex="-1" aria-hidden="true">
                         <div class="modal-dialog modal-dialog-centered modal-lg">
                             <div class="modal-content bg-dark-color">
-                                <iframe class="ifr-video" src="https://www.youtube.com/embed/FK2RaJ1EfA8?autoplay=1"></iframe>
+                                <video
+                                    class="w-100 rounded-3 modal-video"
+                                    controls
+                                    preload="metadata">
+                                    <source src="./assets/sub_vid.mp4" type="video/mp4">
+                                </video>
                             </div>
                         </div>
                     </div>
+
                 </div>
             </div>
         </div>
@@ -260,24 +291,19 @@ if (!$apiKey) {
                                 <span class="logo-blue fw-medium">Founder & Host</span>
                             </div>
                             <div class="social-container mb-3 justify-content-center">
-                                <a href="https://www.facebook.com/NashCast" class="social-item facebook">
+                                <a href="https://www.facebook.com/share/1RAR2JzyJZ/" class="social-item facebook">
                                     <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24" fill="currentColor" stroke="currentColor" stroke-width="0" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-facebook-icon lucide-facebook">
                                         <path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z" />
                                     </svg>
                                 </a>
-                                <a href="https://www.instagram.com/the.nash.cast/" class="social-item insta">
-                                    <svg xmlns="http://www.w3.org/2000/svg"  height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-instagram-icon lucide-instagram">
+                                <a href="https://www.instagram.com/adeelshaikh1996?igsh=amtuYTY0aG9nZzk2" class="social-item insta">
+                                    <svg xmlns="http://www.w3.org/2000/svg" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-instagram-icon lucide-instagram">
                                         <rect width="20" height="20" x="2" y="2" rx="5" ry="5" />
                                         <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z" />
                                         <line x1="17.5" x2="17.51" y1="6.5" y2="6.5" />
                                     </svg>
                                 </a>
-                                <a href="https://x.com/factnash" class="social-item twitter">
-                                    <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 640 640" fill="currentColor" stroke="currentColor" stroke-width="2.5">
-                                        <path d="M453.2 112L523.8 112L369.6 288.2L551 528L409 528L297.7 382.6L170.5 528L99.8 528L264.7 339.5L90.8 112L236.4 112L336.9 244.9L453.2 112zM428.4 485.8L467.5 485.8L215.1 152L173.1 152L428.4 485.8z" />
-                                    </svg>
-                                </a>
-                                <a href="https://www.linkedin.com/company/thenashcast" class="social-item linkedin">
+                                <a href="https://www.linkedin.com/in/adeelshaikh96/" class="social-item linkedin">
                                     <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 640" width="20" height="20" viewBox="0 0 640 640" fill="currentColor" stroke="currentColor" stroke-width="2.5"><!--!Font Awesome Free v7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free Copyright 2026 Fonticons, Inc.-->
                                         <path d="M196.3 512L103.4 512L103.4 212.9L196.3 212.9L196.3 512zM149.8 172.1C120.1 172.1 96 147.5 96 117.8C96 103.5 101.7 89.9 111.8 79.8C121.9 69.7 135.6 64 149.8 64C164 64 177.7 69.7 187.8 79.8C197.9 89.9 203.6 103.6 203.6 117.8C203.6 147.5 179.5 172.1 149.8 172.1zM543.9 512L451.2 512L451.2 366.4C451.2 331.7 450.5 287.2 402.9 287.2C354.6 287.2 347.2 324.9 347.2 363.9L347.2 512L254.4 512L254.4 212.9L343.5 212.9L343.5 253.7L344.8 253.7C357.2 230.2 387.5 205.4 432.7 205.4C526.7 205.4 544 267.3 544 347.7L544 512L543.9 512z" />
                                     </svg>
@@ -300,24 +326,19 @@ if (!$apiKey) {
                                 <span class="logo-blue fw-medium">Founder & Host</span>
                             </div>
                             <div class="social-container mb-3 justify-content-center">
-                                <a href="https://www.facebook.com/NashCast" class="social-item facebook">
+                                <a href="https://www.facebook.com/nabeel.shaikh/" class="social-item facebook">
                                     <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24" fill="currentColor" stroke="currentColor" stroke-width="0" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-facebook-icon lucide-facebook">
                                         <path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z" />
                                     </svg>
                                 </a>
-                                <a href="https://www.instagram.com/the.nash.cast/" class="social-item insta">
+                                <a href="https://www.instagram.com/nabeilschaik/" class="social-item insta">
                                     <svg xmlns="http://www.w3.org/2000/svg" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-instagram-icon lucide-instagram">
                                         <rect width="20" height="20" x="2" y="2" rx="5" ry="5" />
                                         <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z" />
                                         <line x1="17.5" x2="17.51" y1="6.5" y2="6.5" />
                                     </svg>
                                 </a>
-                                <a href="https://x.com/factnash" class="social-item twitter">
-                                    <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 640 640" fill="currentColor" stroke="currentColor" stroke-width="2.5">
-                                        <path d="M453.2 112L523.8 112L369.6 288.2L551 528L409 528L297.7 382.6L170.5 528L99.8 528L264.7 339.5L90.8 112L236.4 112L336.9 244.9L453.2 112zM428.4 485.8L467.5 485.8L215.1 152L173.1 152L428.4 485.8z" />
-                                    </svg>
-                                </a>
-                                <a href="https://www.linkedin.com/company/thenashcast" class="social-item linkedin">
+                                <a href="linkedin.com/in/nabeilschaik" class="social-item linkedin">
                                     <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 640" width="20" height="20" viewBox="0 0 640 640" fill="currentColor" stroke="currentColor" stroke-width="2.5"><!--!Font Awesome Free v7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free Copyright 2026 Fonticons, Inc.-->
                                         <path d="M196.3 512L103.4 512L103.4 212.9L196.3 212.9L196.3 512zM149.8 172.1C120.1 172.1 96 147.5 96 117.8C96 103.5 101.7 89.9 111.8 79.8C121.9 69.7 135.6 64 149.8 64C164 64 177.7 69.7 187.8 79.8C197.9 89.9 203.6 103.6 203.6 117.8C203.6 147.5 179.5 172.1 149.8 172.1zM543.9 512L451.2 512L451.2 366.4C451.2 331.7 450.5 287.2 402.9 287.2C354.6 287.2 347.2 324.9 347.2 363.9L347.2 512L254.4 512L254.4 212.9L343.5 212.9L343.5 253.7L344.8 253.7C357.2 230.2 387.5 205.4 432.7 205.4C526.7 205.4 544 267.3 544 347.7L544 512L543.9 512z" />
                                     </svg>
@@ -451,67 +472,51 @@ if (!$apiKey) {
     </section>
 
     <!-- Our Podcast -->
-
-    <?php
-    $recentPodcasts = [
-        "https://www.youtube.com/watch?v=GewewoxPm9w&list=PLn8IsWI_eoZkUU_xUC3rJZuutrVFJiTYA",
-        "https://www.youtube.com/watch?v=8XAeVOpLsA0&list=PLn8IsWI_eoZkUU_xUC3rJZuutrVFJiTYA&index=2",
-        "https://www.youtube.com/watch?v=d0rY7La482E&list=PLn8IsWI_eoZkUU_xUC3rJZuutrVFJiTYA&index=3",
-        "https://youtu.be/qEOx9O1wCHE?si=LoGk6OKH56I9SIrf",
-        "https://youtu.be/Tdmwo1m-LqM?si=tS6QjhEctIyKVaWa",
-        "https://youtu.be/JI9rufu94pM?si=PfwhEKySNDuu3u25",
-    ];
-    ?>
     <section class="section position-relative">
         <div class="texture-overlay"></div>
         <div class="r-container position-relative" style="z-index: 2;">
             <div class="d-flex flex-column text-center gap-3">
                 <span class="fs-5">Our Podcasts</span>
                 <h3 class="font-1 fw-bold lh-1"><span class="accent-color">Recent</span> Episodes</h3>
-                <div class="row row-cols-1 row-cols-lg-3">
-                    <?php foreach ($recentPodcasts as $index => $url):
-                        $video = getYoutubeData($url, $apiKey);
-                        if (!$video) continue;
-                        $modalId = "modal-" . ($index + 1);
-                    ?>
-                        <div class="col mb-4">
-                            <div class="d-flex flex-column gap-3 h-100">
-                                <div class="position-relative h-100">
-                                    <div class="overlay rounded-3"></div>
-                                    <div class="position-absolute start-0 top-0 w-100 h-100" style="z-index: 2;">
-                                        <div class="d-flex justify-content-center align-items-center h-100">
-                                            <button type="button" class="btn request-loader" data-bs-toggle="modal" data-bs-target="#e119" fdprocessedid="ny0f1o">
-                                                <i class="fa-solid fa-play ms-1"></i>
-                                            </button>
-                                        </div>
-                                    </div>
-                                    <img src="<?= $video['thumbnail'] ?>" class="w-100 h-100 object-fit-cover rounded-3 truncate" alt="<?= htmlspecialchars($video['title']) ?>">
-                                    <div class="position-absolute bottom-0 start-0 w-100 d-flex flex-column px-4 py-3">
-                                        <h5 class="font-1 fw-bold lh-1"><?= $video['title'] ?>
-                                        </h5>
-                                        <div class="d-flex flex-row justify-content-center gap-5">
-                                            <div class="d-flex flex-row align-items-center gap-2">
-                                                <i class="fa-regular fa-clock accent-color"></i>
-                                                <?= $video['duration'] ?>
+                <?php if ($showVideosSection && !empty($latestVideos)): ?>
+                    <div class="row row-cols-1 row-cols-lg-3">
+                        <?php foreach ($latestVideos as $index => $video):
+                            $modalId = "modal-" . ($index + 1);
+                        ?>
+                            <div class="col mb-4">
+                                <div class="d-flex flex-column gap-3 h-100">
+                                    <a href="<?= $video['embed'] ?>" target="_blank" style="color:unset">
+                                        <div class="position-relative h-100">
+                                            <div class="overlay rounded-3"></div>
+                                            <div class="position-absolute start-0 top-0 w-100 h-100" style="z-index: 2;">
+                                                <div class="d-flex justify-content-center align-items-center h-100">
+                                                    <button type="button" class="btn request-loader" data-bs-toggle="modal" data-bs-target="#e119" fdprocessedid="ny0f1o">
+                                                        <i class="fa-solid fa-play ms-1"></i>
+                                                    </button>
+                                                </div>
                                             </div>
-                                            <div class="d-flex flex-row align-items-center gap-2">
-                                                <i class="fa-solid fa-calendar-days accent-color"></i>
-                                                <?= $video['date'] ?>
+                                            <img src="<?= $video['thumbnail'] ?>" class="w-100 h-100 object-fit-cover rounded-3 truncate" alt="<?= htmlspecialchars($video['title']) ?>">
+                                            <div class="position-absolute bottom-0 start-0 w-100 d-flex flex-column px-4 py-3">
+                                                <h5 class="font-1 fw-bold lh-1 truncate"><?= $video['title'] ?>
+                                                </h5>
+                                                <div class="d-flex flex-row justify-content-center gap-5">
+                                                    <div class="d-flex flex-row align-items-center gap-2">
+                                                        <i class="fa-regular fa-clock accent-color"></i>
+                                                        <?= $video['duration'] ?>
+                                                    </div>
+                                                    <div class="d-flex flex-row align-items-center gap-2">
+                                                        <i class="fa-solid fa-calendar-days accent-color"></i>
+                                                        <?= $video['date_formatted'] ?>
+                                                    </div>
+                                                </div>
                                             </div>
                                         </div>
-                                    </div>
+                                    </a>
                                 </div>
                             </div>
-                            <div class="modal fade bg-overlay" id="e119" tabindex="-1" aria-hidden="true">
-                                <div class="modal-dialog modal-dialog-centered modal-lg">
-                                    <div class="modal-content bg-dark-color">
-                                        <iframe class="ifr-video" src="<?= $video['embed'] ?>"></iframe>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    <?php endforeach; ?>
-                </div>
+                        <?php endforeach; ?>
+                    </div>
+                <?php endif; ?>
                 <div class="d-flex justify-content-center">
                     <a aria-current="page" href="podcast" class="btn button font-1 ls-2">VIEW ALL PODCASTS
                     </a>
@@ -567,29 +572,22 @@ if (!$apiKey) {
             <div class="d-flex flex-column text-center gap-3">
                 <span class="fs-5">Our Partners</span>
                 <h3 class="font-1 fw-bold lh-1">In <span class="accent-color">Collaboration</span> With</h3>
-                <p class="mx-auto text-gray" style="max-width: 768px;">Lorem ipsum dolor sit amet, consectetur
-                    adipiscing
-                    elit. Morbi pharetra magna a lacus dignissim, sed scelerisque elit rutrum. Nam a pulvinar
-                    sapien, a placerat arcu. Nam condimentum orci et semper rutrum.
+                <p class="mx-auto text-gray" style="max-width: 768px;"> Our partners play a key role in supporting conversations that matter. By working with brands and
+                    organizations aligned with our values, we amplify ideas, share insights, and build a stronger
+                    ecosystem for entrepreneurs, professionals, and changemakers worldwide.
                 </p>
                 <div class="row row-cols-1 row-cols-lg-6 justify-content-center align-items-center">
                     <div class="col mb-3">
-                        <img src="image/logo-ipsum-1.png" alt="logo" class="img-fluid logo-partner">
+                        <img src="image/partners/brannovate.png" alt="logo" class="img-fluid ">
                     </div>
                     <div class="col mb-3">
-                        <img src="image/logo-ipsum-2.png" alt="logo" class="img-fluid logo-partner">
+                        <img src="image/partners/mavens.png" alt="logo" class="img-fluid ">
                     </div>
                     <div class="col mb-3">
-                        <img src="image/logo-ipsum-3.png" alt="logo" class="img-fluid logo-partner">
+                        <img src="image/partners/edwatch.webp" alt="logo" class="img-fluid ">
                     </div>
                     <div class="col mb-3">
-                        <img src="image/logo-ipsum-4.png" alt="logo" class="img-fluid logo-partner">
-                    </div>
-                    <div class="col  mb-3">
-                        <img src="image/logo-ipsum-5.png" alt="logo" class="img-fluid logo-partner">
-                    </div>
-                    <div class="col mb-3">
-                        <img src="image/logo-ipsum-6.png" alt="logo" class="img-fluid logo-partner">
+                        <img src="image/partners/shapater-logo.webp" alt="logo" class="img-fluid ">
                     </div>
                 </div>
             </div>

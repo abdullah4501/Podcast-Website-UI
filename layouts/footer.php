@@ -48,12 +48,16 @@
                     <div class="col col-lg-8 mb-3">
                         <div class="row row-cols-1 row-cols-lg-3 justify-content-center">
                             <div class="col col-lg-3 mb-3">
-                                <div class="d-flex flex-column gap-3 px-4 px-lg-5">
+                                <div class="d-flex flex-column gap-3 px-4 px-md-5 px-sm-0">
                                     <h5 class="font-1 fw-bold">Pages</h5>
                                     <ul class="list">
                                         <li class="d-flex flex-row align-items-center gap-3">
                                             <i class="fa-solid fa-chevron-right accent-color"></i>
-                                            <a href="home" class="link-white <?= ($page == 'home') ? 'active' : ''; ?>" aria-current="page" href="home">Home</a>
+                                            <a class="link-white <?= ($page == 'home') ? 'active' : ''; ?>" aria-current="page" href="home">Home</a>
+                                        </li>
+                                        <li class="d-flex flex-row align-items-center gap-3">
+                                            <i class="fa-solid fa-chevron-right accent-color"></i>
+                                            <a href="about-us" class="link-white <?= ($page == 'about') ? 'active' : ''; ?>" >About</a>
                                         </li>
                                         <li class="d-flex flex-row align-items-center gap-3">
                                             <i class="fa-solid fa-chevron-right accent-color"></i>
@@ -72,7 +76,7 @@
                                 </div>
                             </div>
                             <div class="col col-lg-3 mb-3">
-                                <div class="d-flex flex-column gap-3 px-4">
+                                <div class="d-flex flex-column gap-3 px-md-4 px-sm-0">
                                     <h5 class="font-1 fw-bold">Listed On</h5>
                                     <img src="image/youtube.png" alt="youtube" class="img-fluid">
                                     <img src="image/spotify.png" alt="spotify" class="img-fluid">
@@ -80,21 +84,21 @@
                                 </div>
                             </div>
                             <div class="col col-lg-6 mb-3">
-                                <div class="d-flex flex-column gap-3 px-5">
+                                <div class="d-flex flex-column gap-3 px-md-5 px-sm-0">
                                     <h5 class="font-1 fw-bold">Information</h5>
                                     <div class="d-flex flex-column gap-3">
                                         <div class="d-flex flex-row gap-3 align-items-center">
-                                            <div class="rounded-circle bg-accent-color d-flex align-items-center justify-content-center" style="width: 3rem; height: 3rem;">
+                                            <div class="rounded-circle bg-accent-color d-flex align-items-center justify-content-center icon-circle">
                                                 <span class="text-white fs-3"><i class="fa-solid fa-location-dot"></i></span>
                                             </div>
                                             <div class="d-flex flex-column">
                                                 <span class="fs-4 font-1 fw-bold">
                                                     Address</span>
-                                                <span class="accent-color">Burj Khalifa Boulevard, Downtown Dubai, Dubai AE</span>
+                                                <span class="accent-color">Downtown Dubai, Dubai AE</span>
                                             </div>
                                         </div>
                                         <div class="d-flex flex-row gap-3 align-items-center">
-                                            <div class="rounded-circle bg-accent-color d-flex align-items-center justify-content-center" style="width: 3rem; height: 3rem;">
+                                            <div class="rounded-circle bg-accent-color d-flex align-items-center justify-content-center icon-circle">
                                                 <span class="text-white fs-3"><i class="fa-solid fa-phone"></i></span>
                                             </div>
                                             <div class="d-flex flex-column">
@@ -103,7 +107,7 @@
                                             </div>
                                         </div>
                                         <div class="d-flex flex-row gap-3 align-items-center">
-                                            <div class="rounded-circle bg-accent-color d-flex align-items-center justify-content-center" style="width: 3rem; height: 3rem;">
+                                            <div class="rounded-circle bg-accent-color d-flex align-items-center justify-content-center icon-circle">
                                                 <span class="text-white fs-3"><i class="fa-solid fa-envelope"></i></span>
                                             </div>
                                             <div class="d-flex flex-column">
@@ -139,21 +143,25 @@
 <script src="js/vendor/isotope.pkgd.min.js"></script>
 <script src="js/video_embedded.js"></script>
 <script>
-    document.addEventListener("DOMContentLoaded", function() {
-        const modal = document.getElementById("exampleModal");
-        const iframe = modal.querySelector("iframe");
-        const src = iframe.src;
+document.addEventListener("DOMContentLoaded", function () {
 
-        const observer = new MutationObserver(() => {
-            if (!modal.classList.contains("show")) {
-                iframe.src = "";
-                iframe.src = src;
-            }
+    document.querySelectorAll('.modal').forEach(modal => {
+
+        const video = modal.querySelector('video');
+        if (!video) return;
+
+        // Play when modal opens
+        modal.addEventListener('shown.bs.modal', () => {
+            video.play();
         });
 
-        observer.observe(modal, {
-            attributes: true,
-            attributeFilter: ["class"]
+        // Stop when modal closes
+        modal.addEventListener('hidden.bs.modal', () => {
+            video.pause();
+            video.currentTime = 0;
         });
+
     });
+
+});
 </script>
