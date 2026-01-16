@@ -57,15 +57,15 @@
                                         </li>
                                         <li class="d-flex flex-row align-items-center gap-3">
                                             <i class="fa-solid fa-chevron-right accent-color"></i>
-                                            <a href="about-us" class="link-white <?= ($page == 'about') ? 'active' : ''; ?>" >About</a>
+                                            <a href="about-us" class="link-white <?= ($page == 'about') ? 'active' : ''; ?>">About</a>
                                         </li>
                                         <li class="d-flex flex-row align-items-center gap-3">
                                             <i class="fa-solid fa-chevron-right accent-color"></i>
-                                            <a  href="podcast " class="link-white <?= ($page == 'podcast') ? 'active' : ''; ?>">Podcasts</a>
+                                            <a href="podcast " class="link-white <?= ($page == 'podcast') ? 'active' : ''; ?>">Podcasts</a>
                                         </li>
                                         <li class="d-flex flex-row align-items-center gap-3">
                                             <i class="fa-solid fa-chevron-right accent-color"></i>
-                                            <a  href="contact " class="link-white <?= ($page == 'contact') ? 'active' : ''; ?>">Contact</a>
+                                            <a href="contact " class="link-white <?= ($page == 'contact') ? 'active' : ''; ?>">Contact</a>
                                         </li>
                                         </li>
                                         <li class="d-flex flex-row align-items-center gap-3">
@@ -139,29 +139,42 @@
 <script src="js/vendor/swiper-bundle.min.js"></script>
 <script src="js/script.js"></script>
 <script src="js/swiper-script.js"></script>
+<script>
+    new Swiper('.partners-swiper', {
+        slidesPerView: 2,
+        spaceBetween: 20,
+        loop: true,
+        breakpoints: {
+            576: {
+                slidesPerView: 3
+            }
+        }
+    });
+</script>
+
 <script src="js/submit-form.js"></script>
 <script src="js/vendor/isotope.pkgd.min.js"></script>
 <script src="js/video_embedded.js"></script>
 <script>
-document.addEventListener("DOMContentLoaded", function () {
+    document.addEventListener("DOMContentLoaded", function() {
 
-    document.querySelectorAll('.modal').forEach(modal => {
+        document.querySelectorAll('.modal').forEach(modal => {
 
-        const video = modal.querySelector('video');
-        if (!video) return;
+            const video = modal.querySelector('video');
+            if (!video) return;
 
-        // Play when modal opens
-        modal.addEventListener('shown.bs.modal', () => {
-            video.play();
-        });
+            // Play when modal opens
+            modal.addEventListener('shown.bs.modal', () => {
+                video.play();
+            });
 
-        // Stop when modal closes
-        modal.addEventListener('hidden.bs.modal', () => {
-            video.pause();
-            video.currentTime = 0;
+            // Stop when modal closes
+            modal.addEventListener('hidden.bs.modal', () => {
+                video.pause();
+                video.currentTime = 0;
+            });
+
         });
 
     });
-
-});
 </script>

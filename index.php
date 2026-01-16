@@ -576,20 +576,43 @@ $playlistId  = $env['Play_List_ID'] ?? null;
                     organizations aligned with our values, we amplify ideas, share insights, and build a stronger
                     ecosystem for entrepreneurs, professionals, and changemakers worldwide.
                 </p>
-                <div class="row row-cols-1 row-cols-lg-6 justify-content-center align-items-center">
-                    <div class="col mb-3">
-                        <img src="image/partners/brannovate.png" alt="logo" class="img-fluid ">
+                <!-- Partners -->
+                <div class="partners-wrapper">
+                    <!-- NORMAL GRID (lg and up) -->
+                    <div class="row row-cols-1 row-cols-lg-6 justify-content-center align-items-center d-none d-lg-flex">
+                        <div class="col mb-3">
+                            <img src="image/partners/brannovate.png" class="img-fluid">
+                        </div>
+                        <div class="col mb-3">
+                            <img src="image/partners/mavens.png" class="img-fluid">
+                        </div>
+                        <div class="col mb-3">
+                            <img src="image/partners/edwatch.webp" class="img-fluid">
+                        </div>
+                        <div class="col mb-3">
+                            <img src="image/partners/shapater-logo.webp" class="img-fluid">
+                        </div>
                     </div>
-                    <div class="col mb-3">
-                        <img src="image/partners/mavens.png" alt="logo" class="img-fluid ">
-                    </div>
-                    <div class="col mb-3">
-                        <img src="image/partners/edwatch.webp" alt="logo" class="img-fluid ">
-                    </div>
-                    <div class="col mb-3">
-                        <img src="image/partners/shapater-logo.webp" alt="logo" class="img-fluid ">
+
+                    <!-- SWIPER (below lg) -->
+                    <div class="swiper partners-swiper d-lg-none">
+                        <div class="swiper-wrapper align-items-center">
+                            <div class="swiper-slide text-center">
+                                <img src="image/partners/brannovate.png" class="img-fluid">
+                            </div>
+                            <div class="swiper-slide text-center">
+                                <img src="image/partners/mavens.png" class="img-fluid">
+                            </div>
+                            <div class="swiper-slide text-center">
+                                <img src="image/partners/edwatch.webp" class="img-fluid">
+                            </div>
+                            <div class="swiper-slide text-center">
+                                <img src="image/partners/shapater-logo.webp" class="img-fluid">
+                            </div>
+                        </div>
                     </div>
                 </div>
+
             </div>
         </div>
     </section>
