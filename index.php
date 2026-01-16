@@ -3,15 +3,7 @@
 $page = 'home';
 include 'layouts/header.php';
 
-$env = parse_ini_file(__DIR__ . "/.env");
-
-if (!$env) {
-    die("Unable to load .env file");
-}
-$apiKey = $env['Youtube_API'] ?? null;
-$playlistId  = $env['Play_List_ID'] ?? null;
-
-
+include './fetchVideos.php';
 ?>
 <!-- END HEADER -->
 
@@ -33,7 +25,7 @@ $playlistId  = $env['Play_List_ID'] ?? null;
                         </p>
                         <div class="d-flex flex-lg-row flex-column gap-lg-5 gap-4">
                             <div class="d-flex flex-row gap-3 align-items-center">
-                                <a href="https://www.youtube.com/playlist?list=PLn8IsWI_eoZkUU_xUC3rJZuutrVFJiTYA" type="button" class="btn request-loader">
+                                <a href="https://www.youtube.com/playlist?list=PLn8IsWI_eoZkUU_xUC3rJZuutrVFJiTYA" type="button" class="btn request-loader" target="_blank">
                                     <i class="fa-solid fa-play ms-1"></i>
                                 </a>
                                 <span class="font-1 ls-2 fw-bold logo-green">START WATCHING</span>
@@ -57,7 +49,7 @@ $playlistId  = $env['Play_List_ID'] ?? null;
                 </div>
                 <div class="col mb-4 mb-lg-0">
                     <div class="d-flex flex-column">
-                        <h2 class="font-1 fw-bold m-0">41<sup>+</sup></h2>
+                        <h2 class="font-1 fw-bold m-0">375<sup>+</sup></h2>
                         <p class="fs-5 m-0">Podcast Episodes</p>
                     </div>
                 </div>
@@ -72,104 +64,14 @@ $playlistId  = $env['Play_List_ID'] ?? null;
     </div>
 
     <!-- Most Favorite Podcast -->
-    <?php
-
-    function getPlaylistVideoIds($playlistId, $apiKey, $limit = 3, $sortBy = 'date')
-    {
-        $url = "https://www.googleapis.com/youtube/v3/playlistItems?part=contentDetails&maxResults=50&playlistId=$playlistId&key=$apiKey";
-
-        $ch = curl_init($url);
-        curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
-        curl_setopt($ch, CURLOPT_SSL_VERIFYPEER, false);
-        $response = curl_exec($ch);
-        curl_close($ch);
-
-        $data = json_decode($response, true);
-
-        $videoIds = [];
-        if (isset($data['items']) && is_array($data['items'])) {
-            foreach ($data['items'] as $item) {
-                if (isset($item['contentDetails']['videoId'])) {
-                    $videoIds[] = $item['contentDetails']['videoId'];
-                }
-            }
-        }
-
-        return $videoIds;
-    }
-
-    function getVideosFromIds(array $videoIds, $apiKey, $sortBy = 'date')
-    {
-        if (empty($videoIds)) return [];
-
-        $ids = implode(',', $videoIds);
-        $url = "https://www.googleapis.com/youtube/v3/videos?part=snippet,contentDetails,statistics&id=$ids&key=$apiKey";
-
-        $ch = curl_init($url);
-        curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
-        $response = curl_exec($ch);
-        curl_close($ch);
-        $data = json_decode($response, true);
-
-        $videos = [];
-        if (isset($data['items']) && is_array($data['items'])) {
-            foreach ($data['items'] as $item) {
-                $interval = new DateInterval($item['contentDetails']['duration']);
-                $videos[] = [
-                    "id"        => $item['id'],
-                    "title"     => $item['snippet']['title'],
-                    "date"      => strtotime($item['snippet']['publishedAt']),
-                    "date_formatted" => date("d F Y", strtotime($item['snippet']['publishedAt'])),
-                    "thumbnail" => $item['snippet']['thumbnails']['high']['url'],
-                    "duration"  => ($interval->h ? $interval->h . "hr " : "") . $interval->i . "m",
-                    "embed"     => "https://www.youtube.com/watch?v=" . $item['id'],
-                    "views"     => $item['statistics']['viewCount'] ?? 0
-                ];
-            }
-        }
-
-        if ($sortBy === 'views') {
-            usort($videos, function ($a, $b) {
-                return $b['views'] - $a['views'];
-            });
-        } elseif ($sortBy === 'date') {
-            usort($videos, function ($a, $b) {
-                return $b['date'] - $a['date'];
-            });
-        }
-
-        return $videos;
-    }
-
-    $showVideosSection = true;
-    if (!$apiKey || !$playlistId) {
-        $showVideosSection = false;
-        $mostViewedVideos = [];
-        $latestVideos = [];
-    }
-
-    if ($showVideosSection) {
-        $videoIds = getPlaylistVideoIds($playlistId, $apiKey, 50);
-
-        // Get most viewed videos (top 3)
-        $allVideos = getVideosFromIds($videoIds, $apiKey, 'views');
-        $mostViewedVideos = array_slice($allVideos, 0, 3);
-
-        // Get latest videos (top 6 by date)
-        $allVideosByDate = getVideosFromIds($videoIds, $apiKey, 'date');
-        $latestVideos = array_slice($allVideosByDate, 0, 6);
-    } else {
-        $mostViewedVideos = [];
-        $latestVideos = [];
-    }
-    ?>
     <section class="section">
         <div class="r-container">
             <div class="d-flex flex-column gap-3 text-center">
                 <h3 class="font-1 fw-bold">Most <span class="accent-color">Impactful</span> Conversations</h3>
                 <p class="mx-auto text-gray" style="max-width: 768px;">Deep-dive episodes from The NashCast featuring entrepreneurs, operators, and changemakers across business, finance, technology, leadership, and personal growth, curated to help you think bigger and execute better.</p>
                 <div class="row row-cols-1 row-cols-lg-3 w-100 text-start">
-                    <?php if ($showVideosSection && !empty($mostViewedVideos)): ?>
+                    <?php if ($showVideosSection && !empty($allVideosByViews)): ?>
+                        <?php $mostViewedVideos = array_slice($allVideosByViews, 0, 3); ?>
                         <?php foreach ($mostViewedVideos as $index => $video):
                             $modalId = "modal-" . ($index + 1);
                         ?>
@@ -211,8 +113,8 @@ $playlistId  = $env['Play_List_ID'] ?? null;
             <div class="row row-cols-1 row-cols-lg-2 w-100">
                 <div class="col mb-lg-0 mb-5">
                     <div class="d-flex flex-column gap-3 h-100 justify-content-center">
-                        <span class="fs-5">About The NashCast</span>
-                        <h3 class="font-1 fw-bold lh-1">Conversations That Shape How You <span class="logo-blue">Think,</span> <span class="accent-color">Lead</span> and <span class="logo-green"> Succeed</span></h3>
+                        <span class="fs-5">About The <span class="accent-color">NashCast</span></span>
+                        <h3 class="font-1 fw-bold lh-1">Conversations That Influence <span class="accent-color">Minds</span> and <span class="logo-blue"> Decisions</span></h3>
                         <p class="text-gray">
                             The NashCast is a YouTube podcast hosted by Adeel Shaikh & Nabeel Shaikh, featuring in-depth conversations with entrepreneurs, industry experts, and changemakers across business, finance, technology, leadership, and personal growth.
                             Each episode is designed to deliver real-world insight, strategic thinking, and practical knowledge you can apply immediately to your work, your company, and your life.
@@ -222,7 +124,9 @@ $playlistId  = $env['Play_List_ID'] ?? null;
                         <h5 class="font-1 fw-bold ">Listen Our Podcast On</h5>
                         <div class="d-flex flex-lg-row gap-3">
                             <div class="col  mb-3">
-                                <img src="image/youtube.png" alt="youtube" class="img-fluid">
+                                <a href="https://www.youtube.com/@theNashCast" target="_blank">
+                                    <img src="image/youtube.png" alt="youtube" class="img-fluid">
+                                </a>
                             </div>
                             <div class="col  mb-3">
                                 <img src="image/spotify.png" alt="spotify" class="img-fluid">
@@ -234,14 +138,14 @@ $playlistId  = $env['Play_List_ID'] ?? null;
                     </div>
                 </div>
                 <div class="col mb-3">
-                    <div class="position-relative">
+                    <div class="position-relative ">
                         <div class="position-absolute top-0 end-0 bg-accent-color px-5 py-4 rounded-3 shadow" style="z-index: 3; margin-top: -50px;">
                             <div class="d-flex flex-column text-center">
                                 <h2 class="font-1 fw-bold m-0">10<sup>th</sup></h2>
                                 <p class="fs-5 m-0">Experience</p>
                             </div>
                         </div>
-                        <div class="position-relative me-5">
+                        <div class="position-relative me-5 cursor-pointer" data-bs-toggle="modal" data-bs-target="#modal-about" fdprocessedid="7mh7r">
                             <div class="image-overlay-2 rounded-4"></div>
                             <div class="position-absolute start-0 top-0 w-100 h-100" style="z-index: 2;">
                                 <div class="d-flex justify-content-center align-items-center h-100">
@@ -250,7 +154,7 @@ $playlistId  = $env['Play_List_ID'] ?? null;
                                     </button>
                                 </div>
                             </div>
-                            <img src="image/about-thumbnail.jpg" alt="image" class="img-fluid w-100 rounded-4">
+                            <img src="image/about-thumbnail2.png" alt="image" class="img-fluid w-100 rounded-4">
                         </div>
                     </div>
                     <div class="modal fade bg-overlay" id="modal-about" tabindex="-1" aria-hidden="true">
@@ -275,7 +179,7 @@ $playlistId  = $env['Play_List_ID'] ?? null;
     <section class="section">
         <div class="r-container">
             <div class="d-flex flex-column gap-3 text-center">
-                <span class="fs-5">Our Hosts</span>
+                <span class="fs-5">Our <span class="accent-color">Hosts</span></span>
                 <h3 class="font-1 fw-bold">Behind <span class="accent-color">The</span> <span class="logo-blue">Nash</span><span class="logo-green">Cast</span></h3>
                 <p class="mx-auto text-gray" style="max-width: 768px;">The NashCast is hosted by Adeel Shaikh & Nabeel Shaikh, and amplified by a network of founders, operators, and experts who live what they teach. Across episodes you’ll hear unfiltered stories, frameworks, and lessons from people building real companies, leading real teams, and navigating real challenges.</p>
                 <div class="row row-cols-1 row-cols-lg-2">
@@ -476,9 +380,10 @@ $playlistId  = $env['Play_List_ID'] ?? null;
         <div class="texture-overlay"></div>
         <div class="r-container position-relative" style="z-index: 2;">
             <div class="d-flex flex-column text-center gap-3">
-                <span class="fs-5">Our Podcasts</span>
+                <span class="fs-5">Our <span class="accent-color">Podcasts</span></span>
                 <h3 class="font-1 fw-bold lh-1"><span class="accent-color">Recent</span> Episodes</h3>
-                <?php if ($showVideosSection && !empty($latestVideos)): ?>
+                <?php if ($showVideosSection && !empty($allVideosByDate)): ?>
+                    <?php $latestVideos = array_slice($allVideosByDate, 0, 6); ?>
                     <div class="row row-cols-1 row-cols-lg-3">
                         <?php foreach ($latestVideos as $index => $video):
                             $modalId = "modal-" . ($index + 1);
@@ -570,7 +475,7 @@ $playlistId  = $env['Play_List_ID'] ?? null;
     <section class="section bg-secondary-color">
         <div class="r-container">
             <div class="d-flex flex-column text-center gap-3">
-                <span class="fs-5">Our Partners</span>
+                <span class="fs-5">Our <span class="accent-color">Partners</span></span>
                 <h3 class="font-1 fw-bold lh-1">In <span class="accent-color">Collaboration</span> With</h3>
                 <p class="mx-auto text-gray" style="max-width: 768px;"> Our partners play a key role in supporting conversations that matter. By working with brands and
                     organizations aligned with our values, we amplify ideas, share insights, and build a stronger

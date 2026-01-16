@@ -78,7 +78,9 @@
                             <div class="col col-lg-3 mb-3">
                                 <div class="d-flex flex-column gap-3 px-md-4 px-sm-0">
                                     <h5 class="font-1 fw-bold">Listed On</h5>
-                                    <img src="image/youtube.png" alt="youtube" class="img-fluid">
+                                    <a href="https://www.youtube.com/@theNashCast" target="_blank">
+                                        <img src="image/youtube.png" alt="youtube" class="img-fluid">
+                                    </a>
                                     <img src="image/spotify.png" alt="spotify" class="img-fluid">
                                     <img src="image/google_podcast.png" alt="google podcast" class="img-fluid">
                                 </div>
@@ -94,7 +96,7 @@
                                             <div class="d-flex flex-column">
                                                 <span class="fs-4 font-1 fw-bold">
                                                     Address</span>
-                                                <span class="accent-color">Downtown Dubai, Dubai AE</span>
+                                                <span class="accent-color">Downtown Dubai, Dubai UAE</span>
                                             </div>
                                         </div>
                                         <div class="d-flex flex-row gap-3 align-items-center">

@@ -43,7 +43,7 @@ include 'layouts/header.php';
                                 <div class="d-flex flex-column">
                                     <span class="fs-4 font-1 fw-bold">
                                         Address</span>
-                                    <span class="accent-color">Downtown Dubai, Dubai AE</span>
+                                    <span class="accent-color">Downtown Dubai, Dubai UAE</span>
                                 </div>
                             </div>
                             <div class="d-flex flex-row gap-3 align-items-center">
@@ -160,8 +160,8 @@ include 'layouts/header.php';
             loading="lazy"
             class="maps"
             src="https://maps.google.com/maps?q=Burj%20Khalifa%20Boulevard%2C%20Downtown%20Dubai%2C%20Dubai%20AE&t=m&z=14&output=embed&iwloc=near"
-            title="Burj Khalifa Boulevard, Downtown Dubai, Dubai AE"
-            aria-label="Burj Khalifa Boulevard, Downtown Dubai, Dubai AE">
+            title="Burj Khalifa Boulevard, Downtown Dubai, Dubai UAE"
+            aria-label="Burj Khalifa Boulevard, Downtown Dubai, Dubai UAE">
         </iframe>
 
     </div>

@@ -636,7 +636,7 @@ a {
 }
 
 .breadcrumb .breadcrumb-item>a {
-    color: var(--logo-green);
+    color: var(--accent-color);
     font-weight: 600;
 }
 
@@ -1033,7 +1033,9 @@ a {
     width: 3rem;
     flex-shrink: 0;
 }
-
+.cursor-pointer {
+    cursor: pointer !important;
+}
 @media screen and (max-width: 768px) {
     .main-text-content {
         font-size: 16px;
