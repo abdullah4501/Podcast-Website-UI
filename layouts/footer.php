@@ -139,7 +139,6 @@
 <script src="js/vendor/bootstrap.bundle.min.js"></script>
 <script src="js/vendor/jquery.min.js"></script>
 <script src="js/vendor/swiper-bundle.min.js"></script>
-<script src="js/script.js"></script>
 <script src="js/swiper-script.js"></script>
 <script>
     new Swiper('.partners-swiper', {
@@ -156,24 +155,28 @@
 
 <script src="js/submit-form.js"></script>
 <script src="js/vendor/isotope.pkgd.min.js"></script>
-<script src="js/video_embedded.js"></script>
+<script src="https://player.vimeo.com/api/player.js"></script>
+
 <script>
     document.addEventListener("DOMContentLoaded", function() {
 
         document.querySelectorAll('.modal').forEach(modal => {
 
-            const video = modal.querySelector('video');
-            if (!video) return;
+            const iframe = modal.querySelector('iframe');
+            if (!iframe) return;
 
-            // Play when modal opens
+            const player = new Vimeo.Player(iframe);
+
+            // play when modal opens
             modal.addEventListener('shown.bs.modal', () => {
-                video.play();
+                player.play();
+                player.setVolume(1);
             });
 
-            // Stop when modal closes
+            // stop when modal closes
             modal.addEventListener('hidden.bs.modal', () => {
-                video.pause();
-                video.currentTime = 0;
+                player.pause();
+                player.setCurrentTime(0);
             });
 
         });

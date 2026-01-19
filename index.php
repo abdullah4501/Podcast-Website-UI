@@ -160,12 +160,15 @@ include './fetchVideos.php';
                     <div class="modal fade bg-overlay" id="modal-about" tabindex="-1" aria-hidden="true">
                         <div class="modal-dialog modal-dialog-centered modal-lg">
                             <div class="modal-content bg-dark-color">
-                                <video
-                                    class="w-100 rounded-3 modal-video"
-                                    controls
-                                    preload="metadata">
-                                    <source src="./assets/sub_vid.mp4" type="video/mp4">
-                                </video>
+                            <iframe
+                            id="aboutVimeo"
+                            class="ifr-video"
+                            src="https://player.vimeo.com/video/1155982375?title=0&byline=0&portrait=0&autoplay=0&muted=0"
+                            frameborder="0"
+                            allow="autoplay; fullscreen; picture-in-picture"
+                            allowfullscreen>
+                            </iframe>
+
                             </div>
                         </div>
                     </div>
