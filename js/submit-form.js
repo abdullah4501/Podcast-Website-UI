@@ -34,7 +34,7 @@ $(function () {
                 url: "./send-mail.php",
                 data: formData,
                 success: function (response) {
-                    if (response === 'success') {
+                    if (response.trim() === 'success') {
                         if (actionInput.length > 0) {
                             subscribeButton.html('SUBSCRIBE');
                             const toastSubscribe = new bootstrap.Toast(successMsgSubscribe[0]);

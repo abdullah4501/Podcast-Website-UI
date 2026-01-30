@@ -20,8 +20,17 @@ $name    = trim($_POST['name'] ?? '');
 $email   = trim($_POST['email'] ?? '');
 $subject = trim($_POST['subject'] ?? '');
 $message = trim($_POST['message'] ?? '');
+$action  = trim($_POST['action'] ?? '');
 
-if ($name === '' || $email === '' || $subject === '' || $message === '') {
+if ($action === 'subscribe') {
+    if ($email === '') {
+        http_response_code(400);
+        exit("Email required for subscription");
+    }
+    $subject = "New Newsletter Subscription";
+    $name = "Subscriber";
+    $message = "A new user has subscribed to the newsletter: " . $email;
+} elseif ($name === '' || $email === '' || $subject === '' || $message === '') {
     http_response_code(400);
     exit("All fields required");
 }
