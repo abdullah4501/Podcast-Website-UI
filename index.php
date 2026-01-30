@@ -289,16 +289,14 @@ include './fetchVideos.php';
                                             <li><i class="fa-solid fa-star"></i></li>
                                         </ul>
                                         <p class="fst-italic text-gray fs-5 m-0">
-                                            “Aliquam consequat arcu a pharetra venenatis. Donec at purus finibus,
-                                            eleifend mauris et, eleifend dui. Nam euismod pulvinar elit quis
-                                            placerat. Donec feugiat porttitor suscipit.”
+                                            “The NashCast explains complex ideas in a very clear and simple way. Their podcasts are genuinely informative and easy to follow.”
                                         </p>
                                         <div class="d-flex flex-row justify-content-between">
                                             <div class="d-flex flex-row align-items-center gap-3">
-                                                <img src="image/image-400x400-1.jpg" alt="testimonials" class="img-fluid rounded-circle" width="70">
+                                                <img src="image/feedbacks/feedback1.webp" alt="testimonials" class="img-fluid rounded-circle" width="70">
                                                 <div>
-                                                    <p class="fs-5 m-0 fw-bold">Jhon Burton</p>
-                                                    <p class="accent-color m-0">Actor</p>
+                                                    <p class="fs-5 m-0 fw-bold">Abdul Rafey Hasan</p>
+                                                    <p class="accent-color m-0">Listener</p>
                                                 </div>
                                             </div>
                                             <div>
@@ -317,16 +315,14 @@ include './fetchVideos.php';
                                             <li><i class="fa-solid fa-star"></i></li>
                                         </ul>
                                         <p class="fst-italic text-gray fs-5 m-0">
-                                            “Aliquam consequat arcu a pharetra venenatis. Donec at purus finibus,
-                                            eleifend mauris et, eleifend dui. Nam euismod pulvinar elit quis
-                                            placerat. Donec feugiat porttitor suscipit.”
+                                            “What makes The NashCast stand out is how real the conversations feel. Their podcasts reflect everyday real experiences.”
                                         </p>
                                         <div class="d-flex flex-row justify-content-between">
                                             <div class="d-flex flex-row align-items-center gap-3">
-                                                <img src="image/image-400x400-2.jpg" alt="testimonials" class="img-fluid rounded-circle" width="70">
+                                                <img src="image/feedbacks/feedback2.webp" alt="testimonials" class="img-fluid rounded-circle" width="70">
                                                 <div>
-                                                    <p class="fs-5 m-0 fw-bold">Danilla</p>
-                                                    <p class="accent-color m-0">Musician</p>
+                                                    <p class="fs-5 m-0 fw-bold">Abdur Rehman</p>
+                                                    <p class="accent-color m-0">Listener</p>
                                                 </div>
                                             </div>
                                             <div>
@@ -345,16 +341,14 @@ include './fetchVideos.php';
                                             <li><i class="fa-solid fa-star"></i></li>
                                         </ul>
                                         <p class="fst-italic text-gray fs-5 m-0">
-                                            “Aliquam consequat arcu a pharetra venenatis. Donec at purus finibus,
-                                            eleifend mauris et, eleifend dui. Nam euismod pulvinar elit quis
-                                            placerat. Donec feugiat porttitor suscipit.”
+                                            “Listening to their podcasts always pushes me to think differently and improve my mindset. The Nashcast have real impact.”
                                         </p>
                                         <div class="d-flex flex-row justify-content-between">
                                             <div class="d-flex flex-row align-items-center gap-3">
-                                                <img src="image/image-400x400-3.jpg" alt="testimonials" class="img-fluid rounded-circle" width="70">
+                                                <img src="image/feedbacks/feedback3.jpg" alt="testimonials" class="img-fluid rounded-circle" width="70">
                                                 <div>
-                                                    <p class="fs-5 m-0 fw-bold">Jenny</p>
-                                                    <p class="accent-color m-0">Blogger</p>
+                                                    <p class="fs-5 m-0 fw-bold">Abdullah Ahmed</p>
+                                                    <p class="accent-color m-0">Listener</p>
                                                 </div>
                                             </div>
                                             <div>
