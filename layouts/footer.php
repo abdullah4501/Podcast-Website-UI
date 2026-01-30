@@ -135,6 +135,56 @@
         </div>
     </div>
 </footer>
+<script>
+    document.querySelectorAll(".rolling-text span").forEach((span, i) => {
+        span.style.transitionDelay = `${i * 25}ms`;
+    });
+</script>
+<script>
+document.addEventListener("DOMContentLoaded", () => {
+
+  const counters = document.querySelectorAll(".counter");
+
+  function formatNumber(num) {
+    if (num >= 1e9) return (num / 1e9).toFixed(1) + "B";
+    if (num >= 1e6) return (num / 1e6).toFixed(1) + "M";
+    if (num >= 1e3) return (num / 1e3).toFixed(1) + "K";
+    return num.toLocaleString();
+  }
+
+  function animateCounter(counter) {
+    const target = parseInt(counter.dataset.target, 10) || 0;
+    const duration = 1000;
+    const startTime = performance.now();
+    const hasPlus = counter.dataset.plus === "true";
+
+    function update(now) {
+      const progress = Math.min((now - startTime) / duration, 1);
+      const value = Math.floor(progress * target);
+
+      counter.innerHTML = hasPlus
+        ? formatNumber(value) + "<sup>+</sup>"
+        : formatNumber(value);
+
+      if (progress < 1) requestAnimationFrame(update);
+    }
+
+    requestAnimationFrame(update);
+  }
+
+  const observer = new IntersectionObserver(entries => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting && !entry.target.classList.contains("done")) {
+        entry.target.classList.add("done");
+        animateCounter(entry.target);
+      }
+    });
+  }, { threshold: 0.4 });
+
+  counters.forEach(counter => observer.observe(counter));
+
+});
+</script>
 
 <script src="js/vendor/bootstrap.bundle.min.js"></script>
 <script src="js/vendor/jquery.min.js"></script>

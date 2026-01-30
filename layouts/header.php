@@ -20,6 +20,9 @@ $baseUrl  = $basePath === '' ? '/' : $basePath . '/';
     <base href="<?= $baseUrl ?>">
     <link rel="icon" href="favicon.ico" type="image/x-icon">
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Source+Sans+3:ital,wght@0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Anton&family=Google+Sans+Code:ital,wght@0,300..800;1,300..800&family=Jost:ital,wght@0,100..900;1,100..900&family=Kanit:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Plus+Jakarta+Sans:ital,wght@0,200..800;1,200..800&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Roboto:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="css/vendor/bootstrap.min.css">
     <link rel="stylesheet" href="css/vendor/fontawesome.css">
     <link rel="stylesheet" href="css/vendor/brands.css">
@@ -36,7 +39,18 @@ $baseUrl  = $basePath === '' ? '/' : $basePath . '/';
                 <div class="container-fluid">
                     <a class="navbar-brand" aria-current="page" href="home">
                         <div class="logo-container">
-                            <img src="image/logo_header.png" alt="logo" class="img-fluid">
+                            <!-- <img src="image/logo_header.png" alt="logo" class="img-fluid"> -->
+                            <h1 class="logo-wrap">
+                                <p class="rolling-text">
+                                    <span class="the">T</span><span class="the">H</span><span class="the">E</span>
+                                    <span>&nbsp;</span>
+                                    <span class="nash">N</span><span class="nash">A</span><span class="nash">S</span><span class="nash">H</span>
+                                    <span class="cast">C</span><span class="cast">A</span><span class="cast">S</span><span class="cast">T</span>
+                                </p>
+                            </h1>
+
+
+
                         </div>
                     </a>
                     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
@@ -48,7 +62,7 @@ $baseUrl  = $basePath === '' ? '/' : $basePath . '/';
                                 <a class="nav-link <?= ($page == 'home') ? 'active' : ''; ?>" aria-current="page" href="home">Home</a>
                             </li>
                             <li class="nav-item">
-                                <a class="nav-link <?= ($page == 'about') ? 'active' : ''; ?>"  href="about-us">About</a>
+                                <a class="nav-link <?= ($page == 'about') ? 'active' : ''; ?>" href="about-us">About</a>
                             </li>
                             <li class="nav-item">
                                 <a class="nav-link <?= ($page == 'podcast') ? 'active' : ''; ?>" href="podcast">Podcasts</a>
@@ -103,7 +117,9 @@ $baseUrl  = $basePath === '' ? '/' : $basePath . '/';
                                 </svg>
                             </a>
                             <a href="https://www.linkedin.com/company/thenashcast" class="social-item linkedin">
-                                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 640" width="20" height="20" viewBox="0 0 640 640" fill="currentColor" stroke="currentColor" stroke-width="2.5"><!--!Font Awesome Free v7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free Copyright 2026 Fonticons, Inc.--><path d="M196.3 512L103.4 512L103.4 212.9L196.3 212.9L196.3 512zM149.8 172.1C120.1 172.1 96 147.5 96 117.8C96 103.5 101.7 89.9 111.8 79.8C121.9 69.7 135.6 64 149.8 64C164 64 177.7 69.7 187.8 79.8C197.9 89.9 203.6 103.6 203.6 117.8C203.6 147.5 179.5 172.1 149.8 172.1zM543.9 512L451.2 512L451.2 366.4C451.2 331.7 450.5 287.2 402.9 287.2C354.6 287.2 347.2 324.9 347.2 363.9L347.2 512L254.4 512L254.4 212.9L343.5 212.9L343.5 253.7L344.8 253.7C357.2 230.2 387.5 205.4 432.7 205.4C526.7 205.4 544 267.3 544 347.7L544 512L543.9 512z"/></svg>
+                                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 640" width="20" height="20" viewBox="0 0 640 640" fill="currentColor" stroke="currentColor" stroke-width="2.5"><!--!Font Awesome Free v7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free Copyright 2026 Fonticons, Inc.-->
+                                    <path d="M196.3 512L103.4 512L103.4 212.9L196.3 212.9L196.3 512zM149.8 172.1C120.1 172.1 96 147.5 96 117.8C96 103.5 101.7 89.9 111.8 79.8C121.9 69.7 135.6 64 149.8 64C164 64 177.7 69.7 187.8 79.8C197.9 89.9 203.6 103.6 203.6 117.8C203.6 147.5 179.5 172.1 149.8 172.1zM543.9 512L451.2 512L451.2 366.4C451.2 331.7 450.5 287.2 402.9 287.2C354.6 287.2 347.2 324.9 347.2 363.9L347.2 512L254.4 512L254.4 212.9L343.5 212.9L343.5 253.7L344.8 253.7C357.2 230.2 387.5 205.4 432.7 205.4C526.7 205.4 544 267.3 544 347.7L544 512L543.9 512z" />
+                                </svg>
                             </a>
                             <a href="https://www.tiktok.com/@thenashcast" class="social-item tiktok">
                                 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 640" width="20" height="20" viewBox="0 0 640 640" fill="currentColor" stroke="currentColor" stroke-width="2.5">

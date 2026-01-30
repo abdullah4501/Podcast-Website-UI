@@ -44,7 +44,7 @@
     --gray-color: #c2c2c2;
     --accent-color: #FF3131;
     --logo-blue: #0C7FFE;
-    --logo-green: #16A637;
+    --logo-green: #00bf63;
     --font-1: 'Montserrat', sans-serif;
     ;
     --font-2: 'Source Sans 3', sans-serif;
@@ -340,7 +340,7 @@ a {
 }
 
 .logo-green {
-    color: #16A637;
+    color: #00bf63;
 }
 
 .border-accent-color {
@@ -1028,14 +1028,112 @@ a {
 .display-numbers {
     margin-top: -80px !important;
 }
+
 .icon-circle {
     height: 3rem;
     width: 3rem;
     flex-shrink: 0;
 }
+
 .cursor-pointer {
     cursor: pointer !important;
 }
+
+.partners-marquee {
+    overflow: hidden;
+    width: 100%;
+    position: relative;
+}
+
+.marquee-track {
+    display: flex;
+    align-items: center;
+    white-space: nowrap;
+    flex-wrap: nowrap;
+    gap: 4rem;
+    animation: marquee 20s linear infinite;
+    width: max-content;
+}
+
+.logo-item {
+    display: flex;
+    align-items: center;
+    gap: 3rem;
+    flex-shrink: 0;
+}
+
+.logo-item img {
+    height: 60px;
+    object-fit: contain;
+    opacity: 0.85;
+    max-width: 250px;
+    transition: 0.3s ease;
+}
+
+.logo-item img:hover {
+    opacity: 1;
+    transform: scale(1.05);
+}
+
+.logo-item i {
+    color: var(--accent-color);
+    font-size: 14px;
+}
+.social-item .fa-brands {
+    margin-top: 1px;
+    margin-right: 1px;
+}
+@keyframes marquee {
+    from {
+        transform: translateX(0);
+    }
+
+    to {
+        transform: translateX(-50%);
+    }
+}
+
+
+.logo-wrap {
+  margin-bottom: 0 !important;
+}
+
+.rolling-text {
+  --line-height-abs: 35px;
+
+  display: flex;
+  width: max-content;
+  overflow: hidden;
+
+  font-size: 32px;
+  font-family: "Anton", sans-serif;
+  user-select: none;
+  cursor: pointer;
+  margin-bottom: 0 !important;
+  text-shadow: 0 var(--line-height-abs) 0 currentColor;
+}
+
+.rolling-text span {
+  display: block;
+  white-space: pre;
+  flex-shrink: 0;
+  backface-visibility: hidden;
+  will-change: transform;
+
+  transition: transform 0.65s cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+.rolling-text:hover span {
+  transform: translateY(calc(-1 * var(--line-height-abs)));
+}
+
+/* colors */
+.the { color: var(--accent-color); }
+.nash { color: var(--logo-blue); }
+.cast { color: var(--logo-green); }
+
+
+
 @media screen and (max-width: 768px) {
     .main-text-content {
         font-size: 16px;
@@ -1045,10 +1143,12 @@ a {
         margin-top: 90px !important;
     }
 }
+
 @media screen and (max-width: 560px) {
     .input-group {
         flex-direction: column;
     }
+
     .input-group input {
         width: 100% !important;
         margin-bottom: 5px;

@@ -106,7 +106,7 @@ include 'layouts/header.php';
                             <div class="d-flex p-2">
                                 <div class="toast-body f-18 d-flex flex-row gap-3 align-items-center text-success">
                                     <i class="fa-solid fa-check f-36 text-success"></i>
-                                    Your Message Successfully Send.
+                                    Your Message Successfully Sent.
                                 </div>
                                 <button type="button" class="me-2 m-auto bg-transparent border-0 ps-1 pe-0 text-success" data-bs-dismiss="toast" aria-label="Close"><i class="fa-solid fa-xmark"></i></button>
                             </div>
@@ -120,34 +120,39 @@ include 'layouts/header.php';
                                 <button type="button" class="me-2 m-auto bg-transparent border-0 ps-1 pe-0 text-danger" data-bs-dismiss="toast" aria-label="Close"><i class="fa-solid fa-xmark"></i></button>
                             </div>
                         </div>
-                        <form class="d-flex flex-column h-100 justify-content-center w-100 needs-validation mb-3 form" novalidate="">
+                        <form id="contactForm" class="d-flex flex-column h-100 justify-content-center w-100 needs-validation mb-3 form" novalidate>
                             <div class="mb-3">
-                                <input type="text" class="form-control py-3 px-4" name="name" id="name" placeholder="Name" required="" fdprocessedid="7bl1w">
-                                <div class="invalid-feedback">
-                                    The field is required.
-                                </div>
+                                <input type="text" class="form-control py-3 px-4" name="name" placeholder="Name" required>
                             </div>
+
                             <div class="mb-3">
-                                <input type="email" class="form-control py-3 px-4" name="email" id="email" placeholder="Email" required="" fdprocessedid="ncydnm">
-                                <div class="invalid-feedback">
-                                    The field is required.
-                                </div>
+                                <input type="email" class="form-control py-3 px-4" name="email" placeholder="Email" required>
                             </div>
+
                             <div class="mb-3">
-                                <input type="text" class="form-control py-3 px-4" name="subject" id="subject" placeholder="Subject" required="" fdprocessedid="z5w3be">
-                                <div class="invalid-feedback">
-                                    The field is required.
-                                </div>
+                                <input type="text" class="form-control py-3 px-4" name="subject" placeholder="Subject" required>
                             </div>
+
                             <div class="mb-3">
-                                <textarea class="form-control py-3 px-4" id="message" name="message" rows="5" placeholder="Message"></textarea>
+                                <textarea class="form-control py-3 px-4" name="message" rows="5" placeholder="Message" required></textarea>
                             </div>
+
                             <div class="mb-3">
-                                <button type="submit" class="btn submit_form font-1 fw-bold ls-2 py-3" fdprocessedid="ygqh7s">
+                                <button type="submit" class="btn submit_form font-1 fw-bold ls-2 py-3">
                                     Send Message
                                 </button>
                             </div>
                         </form>
+
+                        <!-- Toast / dialog -->
+                        <div id="formToast" class="toast align-items-center text-bg-success position-fixed bottom-0 end-0 m-3" role="alert">
+                            <div class="d-flex">
+                                <div class="toast-body">
+                                    Message sent successfully!
+                                </div>
+                                <button type="button" class="btn-close me-2 m-auto" data-bs-dismiss="toast"></button>
+                            </div>
+                        </div>
 
                     </div>
                 </div>
@@ -207,6 +212,7 @@ include 'layouts/header.php';
         </div>
     </section>
 </main>
+
 <!-- FOOTER -->
 <?php
 include 'layouts/footer.php';

@@ -2,6 +2,8 @@
 <?php
 $page = 'about';
 include 'layouts/header.php';
+
+include './fetchVideos.php';
 ?>
 <!-- END HEADER -->
 
@@ -76,12 +78,14 @@ include 'layouts/header.php';
                     <div class="modal fade bg-overlay" id="modal-about" tabindex="-1" aria-hidden="true">
                         <div class="modal-dialog modal-dialog-centered modal-lg">
                             <div class="modal-content bg-dark-color">
-                                <video
-                                    class="w-100 rounded-3 modal-video"
-                                    controls
-                                    preload="metadata">
-                                    <source src="./assets/sub_vid.mp4" type="video/mp4">
-                                </video>
+                                <iframe
+                                id="aboutVimeo"
+                                class="ifr-video"
+                                src="https://player.vimeo.com/video/1155982375?title=0&byline=0&portrait=0&autoplay=0&muted=0"
+                                frameborder="0"
+                                allow="autoplay; fullscreen; picture-in-picture"
+                                allowfullscreen>
+                                </iframe>
                             </div>
                         </div>
                     </div>
@@ -91,32 +95,34 @@ include 'layouts/header.php';
         </div>
     </section>
 
+    <?php 
+    $stats = getChannelStats($channelId, $apiKey);
+    ?>
     <div class="position-relative py-5 px-3 display-numbers">
         <div class="position-absolute w-75 h-100 bg-accent-color rounded-end-3 display-numbers-bg"></div>
         <div class="r-container position-relative" style="z-index: 2;">
             <div class="row row-cols-1 row-cols-lg-4 ps-5 ps-lg-0">
                 <div class="col mb-4 mb-lg-0">
                     <div class="d-flex flex-column">
-                        <h2 class="font-1 fw-bold m-0">113.3K</h2>
+                        <h2 class="font-1 fw-bold m-0 counter" data-target="<?= $stats['subscriberCount'] ?? 0 ?>">0</h2>
                         <p class="fs-5 m-0">Our Subscribers</p>
                     </div>
                 </div>
                 <div class="col mb-4 mb-lg-0">
                     <div class="d-flex flex-column">
-                        <h2 class="font-1 fw-bold m-0">375<sup>+</sup></h2>
+                        <h2 class="font-1 fw-bold m-0 counter" data-target="<?= $stats['videoCount'] ?>" data-plus="true">0<sup>+</sup></h2>
                         <p class="fs-5 m-0">Podcast Episodes</p>
                     </div>
                 </div>
                 <div class="col mb-4 mb-lg-0">
                     <div class="d-flex flex-column">
-                        <h2 class="font-1 fw-bold m-0">592.3K</h2>
+                        <h2 class="font-1 fw-bold m-0 counter" data-target="<?= $stats['viewCount'] ?>">0</h2>
                         <p class="fs-5 m-0">Our Views</p>
                     </div>
                 </div>
             </div>
         </div>
     </div>
-
     <!-- Our Values -->
     <section class="section">
         <div class="r-container">
@@ -288,8 +294,8 @@ include 'layouts/header.php';
     </section>
 
     <!-- Our Partners -->
-    <section class="section bg-secondary-color">
-        <div class="r-container">
+    <section class="bg-secondary-color pb-0">
+        <div class="section">
             <div class="d-flex flex-column text-center gap-3">
                 <span class="fs-5">Our <span class="accent-color">Partners</span></span>
                 <h3 class="font-1 fw-bold lh-1">In <span class="accent-color">Collaboration</span> With</h3>
@@ -298,44 +304,67 @@ include 'layouts/header.php';
                     ecosystem for entrepreneurs, professionals, and changemakers worldwide.
                 </p>
                 <!-- Partners -->
-                <div class="partners-wrapper">
-                    <!-- NORMAL GRID (lg and up) -->
-                    <div class="row row-cols-1 row-cols-lg-6 justify-content-center align-items-center d-none d-lg-flex">
-                        <div class="col mb-3">
-                            <img src="image/partners/brannovate.png" class="img-fluid">
-                        </div>
-                        <div class="col mb-3">
-                            <img src="image/partners/mavens.png" class="img-fluid">
-                        </div>
-                        <div class="col mb-3">
-                            <img src="image/partners/edwatch.webp" class="img-fluid">
-                        </div>
-                        <div class="col mb-3">
-                            <img src="image/partners/shapater-logo.webp" class="img-fluid">
-                        </div>
-                    </div>
-
-                    <!-- SWIPER (below lg) -->
-                    <div class="swiper partners-swiper d-lg-none">
-                        <div class="swiper-wrapper align-items-center">
-                            <div class="swiper-slide text-center">
-                                <img src="image/partners/brannovate.png" class="img-fluid">
-                            </div>
-                            <div class="swiper-slide text-center">
-                                <img src="image/partners/mavens.png" class="img-fluid">
-                            </div>
-                            <div class="swiper-slide text-center">
-                                <img src="image/partners/edwatch.webp" class="img-fluid">
-                            </div>
-                            <div class="swiper-slide text-center">
-                                <img src="image/partners/shapater-logo.webp" class="img-fluid">
-                            </div>
-                        </div>
-                    </div>
-                </div>
 
             </div>
         </div>
+        <div class="partners-wrapper mb-5 bg-light py-2">
+            <!-- NORMAL GRID (lg and up) -->
+            <div class="partners-marquee">
+                <div class="marquee-track">
+                    <div class="logo-item">
+                        <img src="image/partners/brannovate-b.png" class="img-fluid">
+                        <i class="fa-solid fa-star accent-color"></i>
+                    </div>
+                    <div class="logo-item">
+                        <img src="image/partners/mavens.png" class="img-fluid">
+                        <i class="fa-solid fa-star accent-color"></i>
+                    </div>
+                    <div class="logo-item">
+                        <img src="image/partners/edwatch.webp" class="img-fluid">
+                        <i class="fa-solid fa-star accent-color"></i>
+                    </div>
+                    <div class="logo-item">
+                        <img src="image/partners/shapater-logo.webp" class="img-fluid">
+                        <i class="fa-solid fa-star accent-color"></i>
+                    </div>
+                    <div class="logo-item">
+                        <img src="image/partners/brannovate-b.png" class="img-fluid">
+                        <i class="fa-solid fa-star"></i>
+                    </div>
+                    <div class="logo-item">
+                        <img src="image/partners/mavens.png" class="img-fluid">
+                        <i class="fa-solid fa-star"></i>
+                    </div>
+                    <div class="logo-item">
+                        <img src="image/partners/edwatch.webp" class="img-fluid">
+                        <i class="fa-solid fa-star"></i>
+                    </div>
+                    <div class="logo-item">
+                        <img src="image/partners/shapater-logo.webp" class="img-fluid">
+                        <i class="fa-solid fa-star"></i>
+                    </div>
+                    <div class="logo-item">
+                        <img src="image/partners/brannovate-b.png" class="img-fluid">
+                        <i class="fa-solid fa-star"></i>
+                    </div>
+                    <div class="logo-item">
+                        <img src="image/partners/mavens.png" class="img-fluid">
+                        <i class="fa-solid fa-star"></i>
+                    </div>
+                    <div class="logo-item">
+                        <img src="image/partners/edwatch.webp" class="img-fluid">
+                        <i class="fa-solid fa-star"></i>
+                    </div>
+                    <div class="logo-item">
+                        <img src="image/partners/shapater-logo.webp" class="img-fluid">
+                        <i class="fa-solid fa-star"></i>
+                    </div>
+                </div>
+            </div>
+
+
+        </div>
+        <br>
     </section>
 </main>
 

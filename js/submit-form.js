@@ -31,7 +31,7 @@ $(function () {
 
             $.ajax({
                 type: "POST",
-                url: "php/form_process.php",
+                url: "./send-mail.php",
                 data: formData,
                 success: function (response) {
                     if (response === 'success') {

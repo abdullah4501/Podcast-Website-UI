@@ -31,8 +31,8 @@ include 'layouts/header.php';
                 </div>
                 <div class="col mb-3">
                     <div class="d-flex flex-column h-100 justify-content-center gap-3">
-                        <span class="fs-5">Introduce</span>
-                        <h3 class="font-1 fw-bold lh-1">Hosted by <span class="accent-color">Nabeel Shaikh</span></h3>
+                        <span class="fs-5">Introduction</span>
+                        <h3 class="font-1 fw-bold lh-1 ">Nabeel<span class="accent-color"> Shaikh</span></h3>
                         <p class="text-gray fs-5 fst-italic">
                             "The NashCast was created to give ambitious people access to the conversations that usually happen behind closed doors, how real operators think about risk, strategy, careers, leadership, and building a life of meaningful impact. With over a decade in business development and entrepreneurship, I focus on bringing you conversations with founders, investors, and industry leaders who've built real companies from the ground up."
                         </p>
@@ -56,7 +56,7 @@ include 'layouts/header.php';
                                     <line x1="17.5" x2="17.51" y1="6.5" y2="6.5" />
                                 </svg>
                             </a>
-                            <a href="linkedin.com/in/nabeilschaik" class="social-item linkedin">
+                            <a href="https://www.linkedin.com/in/nabeilschaik" class="social-item linkedin">
                                 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 640" width="20" height="20" viewBox="0 0 640 640" fill="currentColor" stroke="currentColor" stroke-width="2.5"><!--!Font Awesome Free v7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free Copyright 2026 Fonticons, Inc.-->
                                     <path d="M196.3 512L103.4 512L103.4 212.9L196.3 212.9L196.3 512zM149.8 172.1C120.1 172.1 96 147.5 96 117.8C96 103.5 101.7 89.9 111.8 79.8C121.9 69.7 135.6 64 149.8 64C164 64 177.7 69.7 187.8 79.8C197.9 89.9 203.6 103.6 203.6 117.8C203.6 147.5 179.5 172.1 149.8 172.1zM543.9 512L451.2 512L451.2 366.4C451.2 331.7 450.5 287.2 402.9 287.2C354.6 287.2 347.2 324.9 347.2 363.9L347.2 512L254.4 512L254.4 212.9L343.5 212.9L343.5 253.7L344.8 253.7C357.2 230.2 387.5 205.4 432.7 205.4C526.7 205.4 544 267.3 544 347.7L544 512L543.9 512z" />
                                 </svg>
@@ -71,8 +71,8 @@ include 'layouts/header.php';
             <div class="row row-cols-1 row-cols-lg-2">
                 <div class="col mb-3">
                     <div class="d-flex flex-column h-100 justify-content-center gap-3">
-                        <span class="fs-5">Introduce</span>
-                        <h3 class="font-1 fw-bold lh-1">Hosted by <span class="logo-blue">Adeel Shaikh</span></h3>
+                        <span class="fs-5">Introduction</span>
+                        <h3 class="font-1 fw-bold lh-1">Adeel<span class="logo-blue"> Shaikh</span></h3>
                         <p class="text-gray fs-5 fst-italic">
                             "We built The NashCast to bridge the gap between inspiration and execution. While most content stops at motivation, we dive into the actual systems, decisions, and challenges that shape outcomes. I bring conversations focused on personal development, leadership psychology, and the human side of building businesses that matter."
                         </p>

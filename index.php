@@ -36,26 +36,30 @@ include './fetchVideos.php';
             </div>
         </div>
     </section>
+    <?php 
+    $stats = getChannelStats($channelId, $apiKey);
+    
 
+    ?>
     <div class="position-relative py-5 px-3 display-numbers">
         <div class="position-absolute w-75 h-100 bg-accent-color rounded-end-3 display-numbers-bg"></div>
         <div class="r-container position-relative" style="z-index: 2;">
             <div class="row row-cols-1 row-cols-lg-4 ps-5 ps-lg-0">
                 <div class="col mb-4 mb-lg-0">
                     <div class="d-flex flex-column">
-                        <h2 class="font-1 fw-bold m-0">113.3K</h2>
+                        <h2 class="font-1 fw-bold m-0 counter" data-target="<?= $stats['subscriberCount'] ?? 0 ?>">0</h2>
                         <p class="fs-5 m-0">Our Subscribers</p>
                     </div>
                 </div>
                 <div class="col mb-4 mb-lg-0">
                     <div class="d-flex flex-column">
-                        <h2 class="font-1 fw-bold m-0">375<sup>+</sup></h2>
+                        <h2 class="font-1 fw-bold m-0 counter" data-target="<?= $stats['videoCount'] ?>" data-plus="true">0<sup>+</sup></h2>
                         <p class="fs-5 m-0">Podcast Episodes</p>
                     </div>
                 </div>
                 <div class="col mb-4 mb-lg-0">
                     <div class="d-flex flex-column">
-                        <h2 class="font-1 fw-bold m-0">592.3K</h2>
+                        <h2 class="font-1 fw-bold m-0 counter" data-target="<?= $stats['viewCount'] ?>">0</h2>
                         <p class="fs-5 m-0">Our Views</p>
                     </div>
                 </div>
@@ -97,7 +101,7 @@ include './fetchVideos.php';
                                         <div><i class="fa-solid fa-calendar-days accent-color"></i> <?= $video['date_formatted'] ?></div>
                                     </div>
 
-                                    <h5 class="font-1 fw-bold lh-1 truncate"><?= $video['title'] ?></h5>
+                                    <h5 class="font-1 fw-semibold lh-1 truncate"><?= $video['title'] ?></h5>
                                 </div>
                             </div>
                         <?php endforeach; ?>
@@ -137,12 +141,13 @@ include './fetchVideos.php';
                         </div>
                     </div>
                 </div>
+                <?php $playlistVideoCount = getPlaylistVideoCount($playlistId, $apiKey); ?>
                 <div class="col mb-3">
                     <div class="position-relative ">
                         <div class="position-absolute top-0 end-0 bg-accent-color px-5 py-4 rounded-3 shadow" style="z-index: 3; margin-top: -50px;">
                             <div class="d-flex flex-column text-center">
-                                <h2 class="font-1 fw-bold m-0">10<sup>th</sup></h2>
-                                <p class="fs-5 m-0">Experience</p>
+                                <h2 class="font-1 fw-bold m-0 counter" data-target="<?=  $playlistVideoCount ?>" data-plus="true">0</h2>
+                                <p class="fs-5 m-0">Podcasts</p>
                             </div>
                         </div>
                         <div class="position-relative me-5 cursor-pointer" data-bs-toggle="modal" data-bs-target="#modal-about" fdprocessedid="7mh7r">
@@ -160,14 +165,15 @@ include './fetchVideos.php';
                     <div class="modal fade bg-overlay" id="modal-about" tabindex="-1" aria-hidden="true">
                         <div class="modal-dialog modal-dialog-centered modal-lg">
                             <div class="modal-content bg-dark-color">
-                            <iframe
-                            id="aboutVimeo"
-                            class="ifr-video"
-                            src="https://player.vimeo.com/video/1155982375?title=0&byline=0&portrait=0&autoplay=0&muted=0"
-                            frameborder="0"
-                            allow="autoplay; fullscreen; picture-in-picture"
-                            allowfullscreen>
-                            </iframe>
+                                <iframe
+                                    id="aboutVimeo"
+                                    class="ifr-video"
+                                    src="https://player.vimeo.com/video/1155982375?title=0&byline=0&portrait=0&autoplay=0&muted=0"
+                                    frameborder="0"
+                                    allow="autoplay; fullscreen; picture-in-picture"
+                                    allowfullscreen>
+                                </iframe>
+
 
                             </div>
                         </div>
@@ -245,7 +251,7 @@ include './fetchVideos.php';
                                         <line x1="17.5" x2="17.51" y1="6.5" y2="6.5" />
                                     </svg>
                                 </a>
-                                <a href="linkedin.com/in/nabeilschaik" class="social-item linkedin">
+                                <a href="https://www.linkedin.com/in/nabeilschaik" class="social-item linkedin">
                                     <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 640" width="20" height="20" viewBox="0 0 640 640" fill="currentColor" stroke="currentColor" stroke-width="2.5"><!--!Font Awesome Free v7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free Copyright 2026 Fonticons, Inc.-->
                                         <path d="M196.3 512L103.4 512L103.4 212.9L196.3 212.9L196.3 512zM149.8 172.1C120.1 172.1 96 147.5 96 117.8C96 103.5 101.7 89.9 111.8 79.8C121.9 69.7 135.6 64 149.8 64C164 64 177.7 69.7 187.8 79.8C197.9 89.9 203.6 103.6 203.6 117.8C203.6 147.5 179.5 172.1 149.8 172.1zM543.9 512L451.2 512L451.2 366.4C451.2 331.7 450.5 287.2 402.9 287.2C354.6 287.2 347.2 324.9 347.2 363.9L347.2 512L254.4 512L254.4 212.9L343.5 212.9L343.5 253.7L344.8 253.7C357.2 230.2 387.5 205.4 432.7 205.4C526.7 205.4 544 267.3 544 347.7L544 512L543.9 512z" />
                                     </svg>
@@ -394,8 +400,8 @@ include './fetchVideos.php';
                             <div class="col mb-4">
                                 <div class="d-flex flex-column gap-3 h-100">
                                     <a href="<?= $video['embed'] ?>" target="_blank" style="color:unset">
-                                        <div class="position-relative h-100">
-                                            <div class="overlay rounded-3"></div>
+                                        <div class="position-relative ratio ratio-16x9">
+                                            <div class="overlay rounded-3 z-1"></div>
                                             <div class="position-absolute start-0 top-0 w-100 h-100" style="z-index: 2;">
                                                 <div class="d-flex justify-content-center align-items-center h-100">
                                                     <button type="button" class="btn request-loader" data-bs-toggle="modal" data-bs-target="#e119" fdprocessedid="ny0f1o">
@@ -404,8 +410,8 @@ include './fetchVideos.php';
                                                 </div>
                                             </div>
                                             <img src="<?= $video['thumbnail'] ?>" class="w-100 h-100 object-fit-cover rounded-3 truncate" alt="<?= htmlspecialchars($video['title']) ?>">
-                                            <div class="position-absolute bottom-0 start-0 w-100 d-flex flex-column px-4 py-3">
-                                                <h5 class="font-1 fw-bold lh-1 truncate"><?= $video['title'] ?>
+                                            <div class="position-absolute justify-content-end z-1 bottom-0 start-0 w-100 d-flex flex-column px-4 py-3 justify-end">
+                                                <h5 class="font-1 fw-semibold lh-1 truncate"><?= $video['title'] ?>
                                                 </h5>
                                                 <div class="d-flex flex-row justify-content-center gap-5">
                                                     <div class="d-flex flex-row align-items-center gap-2">
@@ -475,8 +481,8 @@ include './fetchVideos.php';
     </section>
 
     <!-- Our Partners -->
-    <section class="section bg-secondary-color">
-        <div class="r-container">
+    <section class="bg-secondary-color pb-0">
+        <div class="section">
             <div class="d-flex flex-column text-center gap-3">
                 <span class="fs-5">Our <span class="accent-color">Partners</span></span>
                 <h3 class="font-1 fw-bold lh-1">In <span class="accent-color">Collaboration</span> With</h3>
@@ -485,44 +491,67 @@ include './fetchVideos.php';
                     ecosystem for entrepreneurs, professionals, and changemakers worldwide.
                 </p>
                 <!-- Partners -->
-                <div class="partners-wrapper">
-                    <!-- NORMAL GRID (lg and up) -->
-                    <div class="row row-cols-1 row-cols-lg-6 justify-content-center align-items-center d-none d-lg-flex">
-                        <div class="col mb-3">
-                            <img src="image/partners/brannovate.png" class="img-fluid">
-                        </div>
-                        <div class="col mb-3">
-                            <img src="image/partners/mavens.png" class="img-fluid">
-                        </div>
-                        <div class="col mb-3">
-                            <img src="image/partners/edwatch.webp" class="img-fluid">
-                        </div>
-                        <div class="col mb-3">
-                            <img src="image/partners/shapater-logo.webp" class="img-fluid">
-                        </div>
-                    </div>
-
-                    <!-- SWIPER (below lg) -->
-                    <div class="swiper partners-swiper d-lg-none">
-                        <div class="swiper-wrapper align-items-center">
-                            <div class="swiper-slide text-center">
-                                <img src="image/partners/brannovate.png" class="img-fluid">
-                            </div>
-                            <div class="swiper-slide text-center">
-                                <img src="image/partners/mavens.png" class="img-fluid">
-                            </div>
-                            <div class="swiper-slide text-center">
-                                <img src="image/partners/edwatch.webp" class="img-fluid">
-                            </div>
-                            <div class="swiper-slide text-center">
-                                <img src="image/partners/shapater-logo.webp" class="img-fluid">
-                            </div>
-                        </div>
-                    </div>
-                </div>
 
             </div>
         </div>
+        <div class="partners-wrapper mb-5 bg-light py-2">
+            <!-- NORMAL GRID (lg and up) -->
+            <div class="partners-marquee">
+                <div class="marquee-track">
+                    <div class="logo-item">
+                        <img src="image/partners/brannovate-b.png" class="img-fluid">
+                        <i class="fa-solid fa-star accent-color"></i>
+                    </div>
+                    <div class="logo-item">
+                        <img src="image/partners/mavens.png" class="img-fluid">
+                        <i class="fa-solid fa-star accent-color"></i>
+                    </div>
+                    <div class="logo-item">
+                        <img src="image/partners/edwatch.webp" class="img-fluid">
+                        <i class="fa-solid fa-star accent-color"></i>
+                    </div>
+                    <div class="logo-item">
+                        <img src="image/partners/shapater-logo.webp" class="img-fluid">
+                        <i class="fa-solid fa-star accent-color"></i>
+                    </div>
+                    <div class="logo-item">
+                        <img src="image/partners/brannovate-b.png" class="img-fluid">
+                        <i class="fa-solid fa-star"></i>
+                    </div>
+                    <div class="logo-item">
+                        <img src="image/partners/mavens.png" class="img-fluid">
+                        <i class="fa-solid fa-star"></i>
+                    </div>
+                    <div class="logo-item">
+                        <img src="image/partners/edwatch.webp" class="img-fluid">
+                        <i class="fa-solid fa-star"></i>
+                    </div>
+                    <div class="logo-item">
+                        <img src="image/partners/shapater-logo.webp" class="img-fluid">
+                        <i class="fa-solid fa-star"></i>
+                    </div>
+                    <div class="logo-item">
+                        <img src="image/partners/brannovate-b.png" class="img-fluid">
+                        <i class="fa-solid fa-star"></i>
+                    </div>
+                    <div class="logo-item">
+                        <img src="image/partners/mavens.png" class="img-fluid">
+                        <i class="fa-solid fa-star"></i>
+                    </div>
+                    <div class="logo-item">
+                        <img src="image/partners/edwatch.webp" class="img-fluid">
+                        <i class="fa-solid fa-star"></i>
+                    </div>
+                    <div class="logo-item">
+                        <img src="image/partners/shapater-logo.webp" class="img-fluid">
+                        <i class="fa-solid fa-star"></i>
+                    </div>
+                </div>
+            </div>
+
+
+        </div>
+        <br>
     </section>
 
 </main>

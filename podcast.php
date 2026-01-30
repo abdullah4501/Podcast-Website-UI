@@ -58,7 +58,7 @@ include './fetchVideos.php';
                                         <div><i class="fa-solid fa-calendar-days accent-color"></i> <?= $video['date_formatted'] ?></div>
                                     </div>
 
-                                    <h5 class="font-1 fw-bold lh-1 truncate"><?= $video['title'] ?></h5>
+                                    <h5 class="font-1 fw-semibold lh-1 truncate"><?= $video['title'] ?></h5>
                                 </div>
                             </div>
                         <?php endforeach; ?>
@@ -84,8 +84,8 @@ include './fetchVideos.php';
                             <div class="col mb-4">
                                 <div class="d-flex flex-column gap-3 h-100">
                                     <a href="<?= $video['embed'] ?>" target="_blank" style="color:unset">
-                                        <div class="position-relative h-100">
-                                            <div class="overlay rounded-3"></div>
+                                        <div class="position-relative ratio ratio-16x9" >
+                                            <div class="overlay rounded-3 z-1"></div>
                                             <div class="position-absolute start-0 top-0 w-100 h-100" style="z-index: 2;">
                                                 <div class="d-flex justify-content-center align-items-center h-100">
                                                     <button type="button" class="btn request-loader" data-bs-toggle="modal" data-bs-target="#e119" fdprocessedid="ny0f1o">
@@ -94,8 +94,8 @@ include './fetchVideos.php';
                                                 </div>
                                             </div>
                                             <img src="<?= $video['thumbnail'] ?>" class="w-100 h-100 object-fit-cover rounded-3 truncate" alt="<?= htmlspecialchars($video['title']) ?>">
-                                            <div class="position-absolute bottom-0 start-0 w-100 d-flex flex-column px-4 py-3">
-                                                <h5 class="font-1 fw-bold lh-1 truncate"><?= $video['title'] ?>
+                                            <div class="position-absolute justify-content-end z-1 bottom-0 start-0 w-100 d-flex flex-column px-4 py-3">
+                                                <h5 class="font-1 fw-semibold lh-1 truncate"><?= $video['title'] ?>
                                                 </h5>
                                                 <div class="d-flex flex-row justify-content-center gap-5">
                                                     <div class="d-flex flex-row align-items-center gap-2">
